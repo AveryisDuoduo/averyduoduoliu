@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Visual Works | Avery Liu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Pixelify+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" 
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <main class="sub-page works-page">
+
+    <header class="sub-header">
+      <a href="index.html" class="back-home">← Home</a>
+
+      <nav class="sub-nav" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="visual-works.html" class="active" aria-current="page">Works</a>
+        <a href="explorations.html">Explorations</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Reach Me</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <p class="page-kicker">V — Visual Works</p>
+
+      <h1 class="page-title">Visual Works</h1>
+
+      <p class="page-intro">
+        A collection of finished and more developed projects across web experiences, visual storytelling, graphic design, and spatial work.
+      </p>
+    </section>
+
+    <section class="works-content">
+
+      <!-- Filter chips: JS filtering controlled by main.js -->
+      <div class="filter-chips" aria-label="Project filters">
+        <button class="filter-chip active" type="button" data-filter="all">All</button>
+        <button class="filter-chip" type="button" data-filter="web">Web & Interactive</button>
+        <button class="filter-chip" type="button" data-filter="graphic">Graphic Design</button>
+        <button class="filter-chip" type="button" data-filter="spatial">Visual & Spatial</button>
+      </div>
+
+      <!-- Featured Project -->
+      <section class="featured-work-section" aria-labelledby="featured-work-title">
+        <h2 id="featured-work-title" class="section-title">Featured Project</h2>
+
+        <article class="featured-project-card project-card" data-category="web">
+          <div class="project-image-wrap featured-image-wrap">
+            <img 
+              src="dandelicat.png" 
+              alt="Screenshot of Dandelicat interactive thesis website" 
+              class="project-image"
+            >
+          </div>
+
+          <div class="featured-project-info">
+            <p class="project-meta">Thesis Project / 2026</p>
+
+            <h3>Dandelicat</h3>
+
+            <p>
+              A nonlinear web world about migration, adaptation, identity, and playful systems.
+            </p>
+
+            <ul class="project-tags" aria-label="Project tags">
+              <li>Web</li>
+              <li>Interactive</li>
+              <li>Visual Storytelling</li>
+              <li>Thesis</li>
+            </ul>
+
+            <a 
+              href="https://parsons.edu/dt-2026/dandelicat/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              View Project ↗
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Selected Projects -->
+      <section class="selected-works-section" aria-labelledby="selected-works-title">
+        <h2 id="selected-works-title" class="section-title">Selected Projects</h2>
+
+        <div class="project-grid">
+
+          <!-- Amplify Verbal Exchanges Rekindle Yourself -->
+          <article class="project-card small-project-card" data-category="web">
+            <div class="project-image-wrap">
+              <img 
+                src="AVERY-Cover.PNG" 
+                alt="Screenshot from Amplify Verbal Exchanges Rekindle Yourself"
+                class="project-image"
+              >
+            </div>
+
+            <div class="project-card-content">
+              <p class="project-meta">Web Project / 2024</p>
+
+              <h3 class="long-project-title">Amplify Verbal Exchanges Rekindle Yourself</h3>
+
+              <p>
+                An early web experiment using the acronym AVERY to explore language systems, interaction, and self-identification.
+              </p>
+
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Web</li>
+                <li>Language</li>
+                <li>Identity</li>
+                <li>Interaction</li>
+              </ul>
+
+              <a href="vwamplify-verbal-exchanges.html" class="project-link">
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <!-- Dandelicat Poster -->
+          <article class="project-card small-project-card poster-project-card" data-category="graphic">
+            <div class="project-image-wrap poster-thumb-wrap">
+              <img 
+                src="DandelicatPoster.jpg" 
+                alt="Dandelicat poster featuring a surreal dandelion-cat figure in a dreamlike hallway"
+                class="project-image poster-thumb-image"
+              >
+            </div>
+
+            <div class="project-card-content">
+              <p class="project-meta">Graphic Design / 2025</p>
+
+              <h3>Dandelicat Poster</h3>
+
+              <p>
+                A Photoshop poster created for the Dandelicat thesis world, extending its visual language into a surreal print-based format.
+              </p>
+
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Poster</li>
+                <li>Photoshop</li>
+                <li>Visual System</li>
+                <li>Thesis</li>
+              </ul>
+
+              <a href="vwdandelicat-poster.html" class="project-link">
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <!-- Avery as System -->
+          <article class="project-card small-project-card" data-category="web">
+            <div class="project-image-wrap">
+              <img 
+                src="fall24p1.png" 
+                alt="Screenshot of Avery as System interactive website"
+                class="project-image"
+              >
+            </div>
+
+            <div class="project-card-content">
+              <p class="project-meta">Interactive Website / 2024</p>
+
+              <h3>Avery as System</h3>
+
+              <p>
+                A mouse-based interactive website exploring bilingual thought, translation error, and the relationship between language systems and data systems.
+              </p>
+
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Web</li>
+                <li>Interactive</li>
+                <li>System</li>
+              </ul>
+
+              <a href="vwavery-as-system.html" class="project-link">
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <!-- The Virus -->
+          <article class="project-card small-project-card" data-category="spatial">
+            <div class="project-image-wrap">
+              <img 
+                src="vcover.jpeg" 
+                alt="Wearable light sculpture carried on the body, casting colorful light in a dark space"
+                class="project-image"
+              >
+            </div>
+
+            <div class="project-card-content">
+              <p class="project-meta">Light Sculpture / Selected Work</p>
+
+              <h3>The Virus</h3>
+
+              <p>
+                A wearable light sculpture exploring attachment, infection, biological dependence, and color within darkness.
+              </p>
+
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Fine Art</li>
+                <li>Light Sculpture</li>
+                <li>Wearable</li>
+                <li>Spatial</li>
+              </ul>
+
+              <a href="vwthe-virus.html" class="project-link">
+                View Project
+              </a>
+            </div>
+          </article>
+
+          <!-- Fingers -->
+          <article class="project-card small-project-card" data-category="spatial">
+            <div class="project-image-wrap fingers-thumb-wrap">
+              <img 
+                src="fingers.jpeg" 
+                alt="Wearable soft sculpture inspired by enlarged finger forms"
+                class="project-image fingers-thumb-image"
+              >
+            </div>
+
+            <div class="project-card-content">
+              <p class="project-meta">Wearable Sculpture / Fashion Design</p>
+
+              <h3>Fingers</h3>
+
+              <p>
+                A wearable soft sculpture that transforms the flexible form of fingers into oversized, colorful, and deliberately awkward body-based shapes.
+              </p>
+
+              <ul class="project-tags" aria-label="Project tags">
+                <li>Fashion Design</li>
+                <li>Wearable</li>
+                <li>Soft Sculpture</li>
+                <li>Body</li>
+              </ul>
+
+              <a href="vwfingers.html" class="project-link">
+                View Project
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </section>
+
+    <footer class="page-footer-nav">
+      <a href="about.html" class="footer-link previous-link">← Previous</a>
+      <a href="index.html" class="footer-home">Home</a>
+      <a href="explorations.html" class="footer-link next-link">Next →</a>
+    </footer>
+
+  </main>
+</body>
+</html>
