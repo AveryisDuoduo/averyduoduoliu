@@ -1,1747 +1,968 @@
 /* =========================================================
-   Global / Base
-   ========================================================= */
+Global / Base
+========================================================= */
 
-   :root {
-    --pink: #ec3d97;
-    --cream: #fffdf9;
-    --ink: #242124;
-  
-    --pink-95: rgba(236, 61, 151, 0.95);
-    --pink-82: rgba(236, 61, 151, 0.82);
-    --pink-78: rgba(236, 61, 151, 0.78);
-    --pink-70: rgba(236, 61, 151, 0.70);
-    --pink-64: rgba(236, 61, 151, 0.64);
-    --pink-62: rgba(236, 61, 151, 0.62);
-    --pink-56: rgba(236, 61, 151, 0.56);
-    --pink-48: rgba(236, 61, 151, 0.48);
-    --pink-45: rgba(236, 61, 151, 0.45);
-    --pink-42: rgba(236, 61, 151, 0.42);
-    --pink-35: rgba(236, 61, 151, 0.35);
-    --pink-28: rgba(236, 61, 151, 0.28);
-    --pink-24: rgba(236, 61, 151, 0.24);
-    --pink-22: rgba(236, 61, 151, 0.22);
-    --pink-18: rgba(236, 61, 151, 0.18);
-    --pink-12: rgba(236, 61, 151, 0.12);
-  
-    --cream-56: rgba(255, 253, 249, 0.56);
-    --cream-52: rgba(255, 253, 249, 0.52);
-    --cream-46: rgba(255, 253, 249, 0.46);
-    --cream-38: rgba(255, 253, 249, 0.38);
-    --cream-36: rgba(255, 253, 249, 0.36);
-    --cream-24: rgba(255, 253, 249, 0.24);
-  
-    --ink-82: rgba(36, 33, 36, 0.82);
-    --ink-78: rgba(36, 33, 36, 0.78);
-  
-    --font-body: "DM Sans", system-ui, sans-serif;
-    --font-pixel: "Pixelify Sans", "DM Sans", system-ui, sans-serif;
-    --font-display: "Space Grotesk", "DM Sans", system-ui, sans-serif;
-  
-    --border-soft: 2px solid var(--pink-22);
-    --border-mid: 2px solid var(--pink-24);
-    --shadow-soft: 0 10px 28px rgba(236, 61, 151, 0.055);
-    --shadow-image: 0 14px 34px rgba(236, 61, 151, 0.08);
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    margin: 0;
-    font-family: var(--font-body);
-    color: var(--ink);
-  
-    background:
-      radial-gradient(circle at 68% 42%, rgba(196, 232, 255, 0.82), transparent 34%),
-      radial-gradient(circle at 55% 76%, rgba(210, 239, 255, 0.55), transparent 28%),
-      radial-gradient(circle at 18% 58%, rgba(255, 231, 120, 0.38), transparent 22%),
-      radial-gradient(circle at 88% 18%, rgba(255, 236, 153, 0.30), transparent 20%),
-      var(--cream);
-  }
-  
-  a {
-    color: var(--pink);
-  }
-  
-  
-  /* =========================================================
-     Home Page Layout
-     Used by: index.html
-     ========================================================= */
-  
-  .home-page {
-    min-height: 100vh;
-    padding: 42px 7vw 80px;
-    position: relative;
-    overflow-x: hidden;
-  }
-  
-  .home-link {
-    text-decoration: none;
-  }
-  
-  .hero-header {
-    margin-bottom: 62px;
-  }
-  
-  .title-wrap {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-  }
-  
-  .site-title {
-    margin: 0;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(4.8rem, 13vw, 12rem);
-    line-height: 0.82;
-    letter-spacing: 0.02em;
-    font-weight: 700;
-  
-    color: transparent;
-    -webkit-text-stroke: 2px var(--pink);
-  
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
-  
-  /* =========================================================
-     Home Page Decorations
-     Used by: index.html title sparkles/hearts
-     ========================================================= */
-  
-  .title-deco {
-    position: absolute;
-    color: rgba(236, 61, 151, 0.92);
-    line-height: 1;
-    pointer-events: none;
-  }
-  
-  .deco-left {
-    left: 0;
-    top: 0.45rem;
-    font-size: clamp(1.5rem, 2.2vw, 2.2rem);
-  }
-  
-  .deco-left-small {
-    left: 5.2vw;
-    bottom: 0.2rem;
-    font-size: clamp(0.9rem, 1.4vw, 1.3rem);
-    transform: rotate(-12deg);
-    opacity: 0.75;
-  }
-  
-  .deco-right {
-    right: 1.2vw;
-    top: 0.7rem;
-    font-size: clamp(1.4rem, 2vw, 2rem);
-    transform: rotate(10deg);
-  }
-  
-  .deco-right-small {
-    right: 8vw;
-    bottom: 0.1rem;
-    font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-    opacity: 0.75;
-  }
-  
-  
-  /* =========================================================
-     Home Page Intro Ribbon
-     Used by: index.html
-     ========================================================= */
-  
-  .intro-ribbon {
-    margin: 30px 0 0;
-  
-    position: relative;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
-  
-    background: var(--pink-64);
-    color: rgba(255, 253, 249, 0.98);
-  
-    padding: 9px 7vw;
-  
-    font-family: var(--font-display);
-    font-size: clamp(0.95rem, 1.35vw, 1.12rem);
-    line-height: 1.4;
-    font-weight: 600;
-    letter-spacing: 0.005em;
-    text-align: center;
-  
-    box-shadow: 0 6px 14px rgba(236, 61, 151, 0.06);
-  }
-  
-  
-  /* =========================================================
-     Home Page Main Navigation
-     Used by: index.html A/V/E/R/Y menu
-     ========================================================= */
-  
-  .hero-content {
-    max-width: 920px;
-    margin: 0 auto;
-  }
-  
-  .main-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-  }
-  
-  .nav-item {
-    width: fit-content;
-    display: inline-flex;
-    align-items: baseline;
-  
-    text-decoration: none;
-    font-family: var(--font-pixel);
-    font-size: clamp(2.6rem, 6vw, 5.6rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  
-    transition:
-      transform 0.2s ease,
-      opacity 0.2s ease;
-  }
-  
-  .nav-first {
-    margin-right: 2px;
-    color: var(--pink);
-    font-weight: 700;
-  }
-  
-  .nav-rest {
-    color: var(--pink-45);
-    font-weight: 600;
-  
-    transition:
-      color 0.2s ease,
-      opacity 0.2s ease;
-  }
-  
-  .nav-item:hover,
-  .nav-item:active {
-    transform: translateX(10px);
-  }
-  
-  .nav-item:hover .nav-rest,
-  .nav-item:active .nav-rest {
-    color: var(--pink-82);
-  }
-  
-  .nav-item:focus-visible {
-    outline: 3px dashed var(--pink);
-    outline-offset: 8px;
-  }
-  
-  
-  /* =========================================================
-     Home Page Footer
-     Used by: index.html
-     ========================================================= */
-  
-  .site-footer {
-    margin-top: 90px;
-    padding-bottom: 20px;
-    color: rgba(236, 61, 151, 0.75);
-    font-size: 0.85rem;
-    text-align: center;
-  }
-  
-  .footer-line {
-    width: 100%;
-    height: 2px;
-    margin-bottom: 18px;
-  
-    background: var(--pink-35);
-    border-radius: 999px;
-  }
-  
-  .site-footer p {
-    margin: 0;
-  }
-  
-  
-  /* =========================================================
-     Sub Pages: Shared Layout
-     Used by: About / Works / Explorations / Resume / Reach Me
-     ========================================================= */
-  
-  .sub-page {
-    min-height: 100vh;
-    padding: 34px 7vw 56px;
-    position: relative;
-  
-    font-family: var(--font-body);
-    color: var(--ink);
-  }
-  
-  
-  /* =========================================================
-     Sub Pages: Top Navigation
-     Left: Home / Right: Page Links
-     ========================================================= */
-  
-  .sub-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 28px;
-  
-    margin-bottom: 74px;
-  }
-  
-  .back-home {
-    color: var(--pink);
-    text-decoration: none;
-  
-    font-family: var(--font-display);
-    font-size: 0.98rem;
-    font-weight: 700;
-  
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-  }
-  
-  .back-home:hover {
-    opacity: 0.7;
-    transform: translateX(-3px);
-  }
-  
-  .sub-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 22px;
-    flex-wrap: wrap;
-  }
-  
-  .sub-nav a {
-    color: var(--pink-56);
-    text-decoration: none;
-  
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 700;
-  
-    transition:
-      color 0.2s ease,
-      transform 0.2s ease;
-  }
-  
-  .sub-nav a:hover {
-    color: var(--pink-95);
-    transform: translateY(-2px);
-  }
-  
-  .sub-nav a.active,
-  .sub-nav a[aria-current="page"] {
-    color: var(--pink);
-  }
-  
-  
-  /* =========================================================
-     Sub Pages: Hero Section
-     Page title area at the top
-     ========================================================= */
-  
-  .page-hero {
-    max-width: 900px;
-    margin: 0 auto 72px;
-    text-align: center;
-  }
-  
-  .page-kicker {
-    margin: 0 0 12px;
-  
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  
-    color: var(--pink-62);
-  }
-  
-  .page-title {
-    margin: 0;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(4rem, 11vw, 9rem);
-    line-height: 0.86;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  
-    color: transparent;
-    -webkit-text-stroke: 1.8px var(--pink);
-  
-    text-align: center;
-  }
-  
-  .page-intro {
-    max-width: 720px;
-    margin: 26px auto 0;
-  
-    font-family: var(--font-display);
-    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-    line-height: 1.65;
-    font-weight: 500;
-  
-    color: var(--ink-78);
-  }
-  
-  
-  /* =========================================================
-     Sub Pages: Main Content Block
-     Used by: About / Contact / Resume / Project Detail Text
-     ========================================================= */
-  
-  .content-block {
-    max-width: 760px;
-    margin: 0 auto;
-  
-    padding: 34px 0 20px;
-    border-top: var(--border-soft);
-  }
-  
-  .content-block h2 {
-    margin: 0 0 18px;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    color: var(--pink);
-  }
-  
-  .content-block p {
-    margin: 0 0 18px;
-  
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.75;
-  
-    color: var(--ink-82);
-  }
-  
-  .content-block a {
-    color: var(--pink);
-    font-weight: 700;
-  }
-  
-  
-  /* =========================================================
-     Reach Me Page
-     Used by: contact.html
-     ========================================================= */
-  
-  .contact-card {
-    padding: 30px 34px 34px;
-  
-    background: var(--cream-56);
-    border: var(--border-soft);
-  
-    box-shadow: var(--shadow-soft);
-  }
-  
-  .contact-card h2 {
-    margin-top: 0;
-  }
-  
-  .contact-card p:last-of-type {
-    margin-bottom: 24px;
-  }
-  
-  .contact-block {
-    padding: 34px 0 0;
-  }
-  
-  .contact-block + .page-footer-nav {
-    max-width: 760px;
-    margin-top: 34px;
-  }
-  
-  
-  /* =========================================================
-     Buttons
-     Used by: Resume / Reach Me / Project Detail external links
-     ========================================================= */
-  
-  .resume-button,
-  .message-button,
-  .project-live-link {
-    display: inline-block;
-    padding: 11px 20px;
-  
-    background: rgba(236, 61, 151, 0.76);
-    color: var(--cream) !important;
-    text-decoration: none;
-  
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 800;
-  
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease;
-  }
-  
-  .resume-button,
-  .message-button {
-    margin-top: 12px;
-  }
-  
-  .resume-button:hover,
-  .message-button:hover,
-  .project-live-link:hover {
-    transform: translateY(-3px);
-    background: var(--pink-95);
-  }
-  
-  
-  /* =========================================================
-     Project Preview Blocks
-     Used by: older Works / Explorations placeholder cards
-     ========================================================= */
-  
-  .project-preview {
-    padding: 22px 0;
-    border-bottom: 1.5px solid var(--pink-18);
-  }
-  
-  .project-preview h3 {
-    margin: 0 0 8px;
-  
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    color: var(--pink);
-  }
-  
-  .project-preview p {
-    margin-bottom: 0;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Main Layout
-     Used by: visual-works.html
-     ========================================================= */
-  
-  .works-page .page-hero {
-    margin-top: 10px;
-    margin-bottom: 54px;
-  }
-  
-  .works-page .page-title {
-    font-size: clamp(3.8rem, 9vw, 7.6rem);
-  }
-  
-  .works-content {
-    max-width: 1080px;
-    margin: 0 auto;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Filter Chips
-     Clickable project filters
-     ========================================================= */
-  
-  .filter-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  
-    margin-bottom: 46px;
-    padding-top: 6px;
-  }
-  
-  .filter-chip {
-    border: 2px solid var(--pink-48);
-    border-radius: 999px;
-  
-    background: var(--cream-46);
-    color: var(--pink-82);
-  
-    padding: 8px 18px;
-  
-    font-family: var(--font-display);
-    font-size: 0.92rem;
-    font-weight: 800;
-  
-    cursor: pointer;
-  
-    transition:
-      background 0.2s ease,
-      color 0.2s ease,
-      transform 0.2s ease,
-      border-color 0.2s ease;
-  }
-  
-  .filter-chip:hover,
-  .filter-chip.active {
-    background: var(--pink-78);
-    border-color: var(--pink-78);
-    color: var(--cream);
-  }
-  
-  .filter-chip:hover {
-    transform: translateY(-2px);
-  }
-  
-  .filter-chip:focus {
-    outline: none;
-  }
-  
-  .filter-chip:focus-visible {
-    outline: 3px dashed rgba(236, 61, 151, 0.55);
-    outline-offset: 4px;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Section Titles
-     Used by: Featured Project / Selected Projects
-     ========================================================= */
-  
-  .section-title {
-    margin: 0 0 20px;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    color: var(--pink);
-  }
-  
-  .featured-work-section {
-    margin-bottom: 72px;
-  }
-  
-  .featured-work-section .section-title {
-    font-size: clamp(2.5rem, 4.8vw, 4rem);
-    margin-bottom: 24px;
-  }
-  
-  .selected-works-section {
-    margin-top: 8px;
-  }
-  
-  .selected-works-section .section-title {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    margin-bottom: 24px;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Shared Project Card Styles
-     ========================================================= */
-  
-  .project-card {
-    border: var(--border-soft);
-    background: var(--cream-52);
-  
-    box-shadow: 0 10px 28px rgba(236, 61, 151, 0.045);
-  
-    transition:
-      transform 0.2s ease,
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--pink-42);
-    box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
-  }
-  
-  .project-card h3 {
-    margin: 0 0 12px;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(2rem, 3.8vw, 3rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    color: var(--pink);
-  }
-  
-  .project-card p {
-    margin: 0 0 18px;
-  
-    font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.65;
-  
-    color: var(--ink-82);
-  }
-  
-  .project-meta {
-    margin-bottom: 10px !important;
-  
-    font-family: var(--font-display) !important;
-    font-size: 0.86rem !important;
-    line-height: 1.4 !important;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  
-    color: var(--pink-62) !important;
-  }
+:root {
+  --pink: #ec3d97;
+  --cream: #fffdf9;
+  --ink: #242124;
 
-  /* Long project title inside Works cards */
-.long-project-title {
-  font-size: clamp(1.45rem, 2.5vw, 2.2rem) !important;
-  line-height: 1.05 !important;
+  --pink-95: rgba(236, 61, 151, 0.95);
+  --pink-82: rgba(236, 61, 151, 0.82);
+  --pink-78: rgba(236, 61, 151, 0.78);
+  --pink-70: rgba(236, 61, 151, 0.70);
+  --pink-64: rgba(236, 61, 151, 0.64);
+  --pink-62: rgba(236, 61, 151, 0.62);
+  --pink-56: rgba(236, 61, 151, 0.56);
+  --pink-48: rgba(236, 61, 151, 0.48);
+  --pink-45: rgba(236, 61, 151, 0.45);
+  --pink-42: rgba(236, 61, 151, 0.42);
+  --pink-35: rgba(236, 61, 151, 0.35);
+  --pink-28: rgba(236, 61, 151, 0.28);
+  --pink-24: rgba(236, 61, 151, 0.24);
+  --pink-22: rgba(236, 61, 151, 0.22);
+  --pink-18: rgba(236, 61, 151, 0.18);
+  --pink-12: rgba(236, 61, 151, 0.12);
+
+  --cream-56: rgba(255, 253, 249, 0.56);
+  --cream-52: rgba(255, 253, 249, 0.52);
+  --cream-46: rgba(255, 253, 249, 0.46);
+  --cream-38: rgba(255, 253, 249, 0.38);
+  --cream-36: rgba(255, 253, 249, 0.36);
+  --cream-24: rgba(255, 253, 249, 0.24);
+
+  --ink-82: rgba(36, 33, 36, 0.82);
+  --ink-78: rgba(36, 33, 36, 0.78);
+
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-pixel: "Pixelify Sans", "DM Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+
+  --border-soft: 2px solid var(--pink-22);
+  --border-mid: 2px solid var(--pink-24);
+  --shadow-soft: 0 10px 28px rgba(236, 61, 151, 0.055);
+  --shadow-image: 0 14px 34px rgba(236, 61, 151, 0.08);
 }
-  
-  /* =========================================================
-     Works Page: Project Images
-     Real images and placeholders
-     ========================================================= */
-  
-  .project-image-placeholder,
-  .project-image-wrap {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-  
-    border-bottom: 2px solid var(--pink-18);
-    background: var(--cream-38);
-  }
-  
-  .project-image-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    padding: 18px;
-  
-    background:
-      radial-gradient(circle at 35% 35%, rgba(196, 232, 255, 0.7), transparent 34%),
-      radial-gradient(circle at 72% 62%, rgba(255, 231, 120, 0.35), transparent 30%),
-      var(--cream-38);
-  
-    color: rgba(236, 61, 151, 0.48);
-    text-align: center;
-  
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 700;
-  }
-  
-  .project-image-wrap {
-    overflow: hidden;
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-  
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  .featured-image-placeholder,
-  .featured-image-wrap {
-    min-height: 360px;
-    aspect-ratio: auto;
-  }
-  
-  .featured-image-wrap {
-    border-bottom: none;
-    border-right: 2px solid var(--pink-18);
-  }
-  
-  .poster-thumb-wrap {
-    aspect-ratio: 4 / 3;
-    background: var(--cream-38);
-  }
-  
-  .poster-thumb-image {
-    object-fit: cover;
-    object-position: center 34%;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Featured Project
-     Dandelicat large card
-     ========================================================= */
-  
-  .featured-project-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(390px, 0.88fr);
-    gap: 0;
-    overflow: hidden;
-  }
-  
-  .featured-project-info {
-    padding: 34px 36px 38px;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .featured-project-info h3 {
-    font-size: clamp(2.4rem, 3.4vw, 3.5rem);
-    line-height: 0.95;
-    word-break: normal;
-  }
-  
-  .featured-project-info p {
-    max-width: 480px;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Project Tags
-     Non-clickable labels inside project cards
-     ========================================================= */
-  
-  .project-tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  
-    margin: 0 0 22px;
-    padding: 0;
-  }
-  
-  .project-tags li {
-    padding: 5px 10px;
-  
-    border: 1.5px solid var(--pink-24);
-    border-radius: 0;
-  
-    background: var(--cream-24);
-    color: var(--pink-70);
-  
-    font-family: var(--font-display);
-    font-size: 0.76rem;
-    font-weight: 700;
-  
-    cursor: default;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Project Links
-     ========================================================= */
-  
-  .project-link {
-    width: fit-content;
-    display: inline-block;
-  
-    color: var(--pink);
-    text-decoration: none;
-  
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 800;
-  
-    border-bottom: 2px solid rgba(236, 61, 151, 0.5);
-  
-    transition:
-      color 0.2s ease,
-      border-color 0.2s ease,
-      transform 0.2s ease;
-  }
-  
-  .project-link:hover {
-    color: var(--pink-78);
-    border-color: rgba(236, 61, 151, 0.9);
-    transform: translateX(3px);
-  }
-  
-  .placeholder-link {
-    opacity: 0.55;
-    pointer-events: none;
-  }
-  
-  
-  /* =========================================================
-     Works Page: Selected Projects Grid
-     ========================================================= */
-  
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px;
-  }
-  
-  .small-project-card {
-    overflow: hidden;
-  
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .project-card-content {
-    flex: 1;
-    padding: 24px 26px 28px;
-  }
-  
-  .small-project-card h3 {
-    font-size: clamp(1.8rem, 3.2vw, 2.7rem);
-  }
-  
-  
-  /* =========================================================
-     Works Detail Pages: Shared Layout
-     Used by: vwdandelicat-poster.html / vwavery-as-system.html
-     ========================================================= */
-  
-  .works-detail-page .page-hero {
-    max-width: 980px;
-    margin: 0 auto 54px;
-    text-align: center;
-  }
-  
-  .works-detail-page .page-kicker {
-    text-align: center;
-  }
-  
-  .works-detail-title {
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-  
-    font-size: clamp(3rem, 6.2vw, 5.2rem);
-    line-height: 0.9;
-    text-align: center;
-  }
-  
-  .project-detail-content {
-    max-width: 980px;
-    margin: 0 auto;
-  
-    display: grid;
-    grid-template-columns: 340px minmax(0, 1fr);
-    gap: 58px;
-    align-items: start;
-  }
-  
-  .poster-display,
-  .website-detail-display {
-    margin: 0;
-    padding: 0;
-  
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .poster-full-image,
-  .website-detail-image,
-  .detail-image-placeholder {
-    width: 100%;
-    max-width: 340px;
-  
-    border: var(--border-mid);
-    box-shadow: var(--shadow-image);
-  }
-  
-  .poster-full-image,
-  .website-detail-image {
-    height: auto;
-    display: block;
-  
-    object-fit: contain;
-    object-position: center;
-  }
-  
-  .project-info-block {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-  
-    border-top: none;
-  }
-  
-  .project-info-block h2 {
-    margin-top: 0;
-  }
-  
-  .project-info-block p {
-    max-width: 520px;
-  }
-  
-  /* =========================================================
-   Artwork Detail Pages
-   Used by: vwthe-virus.html and future fine art / spatial pages
-   ========================================================= */
 
-.artwork-detail-page .page-hero {
-  max-width: 900px;
-  margin: 0 auto 56px;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+
+  background:
+  radial-gradient(circle at 68% 42%, rgba(196, 232, 255, 0.82), transparent 34%),
+  radial-gradient(circle at 55% 76%, rgba(210, 239, 255, 0.55), transparent 28%),
+  radial-gradient(circle at 18% 58%, rgba(255, 231, 120, 0.38), transparent 22%),
+  radial-gradient(circle at 88% 18%, rgba(255, 236, 153, 0.30), transparent 20%),
+  var(--cream);
+}
+
+a {
+  color: var(--pink);
+}
+
+/* =========================================================
+Home Page Layout
+Used by: index.html
+========================================================= */
+
+.home-page {
+  min-height: 100vh;
+  padding: 42px 7vw 80px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.home-link {
+  text-decoration: none;
+}
+
+.hero-header {
+  margin-bottom: 62px;
+}
+
+.title-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.site-title {
+  margin: 0;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(4.8rem, 13vw, 12rem);
+  line-height: 0.82;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+
+  color: transparent;
+  -webkit-text-stroke: 2px var(--pink);
+
+  text-transform: uppercase;
   text-align: center;
 }
 
-/* Large artwork image first */
-.artwork-main-section {
-  max-width: 980px;
-  margin: 0 auto 64px;
+/* =========================================================
+Home Page Decorations
+Used by: index.html title sparkles/hearts
+========================================================= */
+
+.title-deco {
+  position: absolute;
+  color: rgba(236, 61, 151, 0.92);
+  line-height: 1;
+  pointer-events: none;
 }
 
-.artwork-main-figure {
-  margin: 0;
-  padding: 0;
+.deco-left {
+  left: 0;
+  top: 0.45rem;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
 }
 
-.artwork-main-image {
+.deco-left-small {
+  left: 5.2vw;
+  bottom: 0.2rem;
+  font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+  transform: rotate(-12deg);
+  opacity: 0.75;
+}
+
+.deco-right {
+  right: 1.2vw;
+  top: 0.7rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  transform: rotate(10deg);
+}
+
+.deco-right-small {
+  right: 8vw;
+  bottom: 0.1rem;
+  font-size: clamp(0.9rem, 1.3vw, 1.2rem);
+  opacity: 0.75;
+}
+
+/* =========================================================
+Home Page Intro Ribbon
+Used by: index.html
+========================================================= */
+
+.intro-ribbon {
+  margin: 30px 0 0;
+
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+
+  background: var(--pink-64);
+  color: rgba(255, 253, 249, 0.98);
+
+  padding: 9px 7vw;
+
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-align: center;
+
+  box-shadow: 0 6px 14px rgba(236, 61, 151, 0.06);
+}
+
+/* =========================================================
+Home Page Main Navigation
+Used by: index.html A/V/E/R/Y menu
+========================================================= */
+
+.hero-content {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.nav-item {
+  width: fit-content;
+  display: inline-flex;
+  align-items: baseline;
+
+  text-decoration: none;
+  font-family: var(--font-pixel);
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  line-height: 1;
+  font-weight: 700;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  transition:
+  transform 0.2s ease,
+  opacity 0.2s ease;
+}
+
+.nav-first {
+  margin-right: 2px;
+  color: var(--pink);
+  font-weight: 700;
+}
+
+.nav-rest {
+  color: var(--pink-45);
+  font-weight: 600;
+
+  transition:
+  color 0.2s ease,
+  opacity 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item:active {
+  transform: translateX(10px);
+}
+
+.nav-item:hover .nav-rest,
+.nav-item:active .nav-rest {
+  color: var(--pink-82);
+}
+
+.nav-item:focus-visible {
+  outline: 3px dashed var(--pink);
+  outline-offset: 8px;
+}
+
+/* =========================================================
+Home Page Footer
+Used by: index.html
+========================================================= */
+
+.site-footer {
+  margin-top: 90px;
+  padding-bottom: 20px;
+  color: rgba(236, 61, 151, 0.75);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.footer-line {
   width: 100%;
+  height: 2px;
+  margin-bottom: 18px;
+
+  background: var(--pink-35);
+  border-radius: 999px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* =========================================================
+Home Page: Stable Left Menu + Curated Work Grid
+Used by: index.html
+========================================================= */
+
+.home-page.home-showcase-page {
+  min-height: 100vh;
+  padding: 30px 2vw 26px;
+  overflow-x: hidden;
+}
+
+.home-showcase-page .home-showcase-header {
+  margin-bottom: 26px;
+}
+
+.home-showcase-page .site-title {
+  font-size: clamp(4.6rem, 11vw, 10rem);
+}
+
+.home-showcase-page .intro-ribbon {
+  margin-top: 20px;
+}
+
+/* Main layout */
+.home-showcase-layout {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1030px);
+  gap: 26px;
+  align-items: start;
+  justify-content: center;
+}
+
+/* Left menu */
+.home-menu-column {
+  position: relative;
+  z-index: 5;
+  padding-top: 10px;
+  margin-left: -42px;
+  overflow: visible;
+}
+
+.home-compact-nav {
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.home-compact-nav .nav-item {
+  width: 255px;
+
+  font-size: clamp(1.75rem, 2.75vw, 2.9rem);
+  line-height: 0.95;
+
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.home-compact-nav .nav-item:hover,
+.home-compact-nav .nav-item:active {
+  transform: translateX(6px);
+}
+
+/* Right work area */
+.home-work-showcase {
+  min-width: 0;
+  max-width: 1030px;
+}
+
+.home-work-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr 1fr;
+  grid-template-areas:
+  "dandelicat poster virus"
+  "amplify    poster fingers";
+  gap: 18px 22px;
+  align-items: start;
+}
+
+/* Grid positions */
+.tile-dandelicat {
+  grid-area: dandelicat;
+}
+
+.tile-poster {
+  grid-area: poster;
+}
+
+.tile-virus {
+  grid-area: virus;
+}
+
+.tile-amplify {
+  grid-area: amplify;
+}
+
+.tile-fingers {
+  grid-area: fingers;
+}
+
+/* Tile base */
+.home-work-tile {
+  display: block;
+  min-width: 0;
+
+  text-decoration: none;
+  color: var(--pink);
+}
+
+/* Image frame: no border on homepage */
+.home-work-tile-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  line-height: 0;
+
+  transition:
+  transform 0.22s ease,
+  opacity 0.22s ease;
+}
+
+.home-work-tile:hover .home-work-tile-image-wrap {
+  transform: translateY(-4px);
+  opacity: 0.88;
+}
+
+.home-work-tile-image {
+  width: 100%;
+  height: 100%;
   display: block;
 
-  border: 2px solid rgba(236, 61, 151, 0.24);
-  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.28s ease;
 }
 
-/* Text block below the main image */
-.artwork-text-block {
-  max-width: 760px;
+.home-work-tile:hover .home-work-tile-image {
+  transform: scale(1.03);
+}
+
+/* Work titles under images */
+.home-work-tile h2 {
+  margin: 7px 0 0;
+
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  line-height: 1.25;
+  font-weight: 900;
+
+  color: var(--pink);
+}
+
+/* Poster: original image ratio is 2:3 */
+.tile-poster .home-work-tile-image-wrap {
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.tile-poster .home-work-tile-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Crop adjustments */
+.tile-virus .home-work-tile-image {
+  object-position: center;
+}
+
+.home-work-fingers-image {
+  object-position: center 44%;
+}
+
+/* Footer */
+.home-showcase-page .site-footer {
+  display: block;
+  margin-top: 26px;
+}
+
+/* Medium desktop */
+@media (max-width: 1250px) {
+  .home-showcase-layout {
+    grid-template-columns: 245px minmax(0, 950px);
+    gap: 24px;
+  }
+
+  .home-menu-column {
+    margin-left: -24px;
+  }
+
+  .home-compact-nav .nav-item {
+    width: 245px;
+    font-size: clamp(1.65rem, 2.6vw, 2.75rem);
+  }
+
+  .home-work-showcase {
+    max-width: 950px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .home-showcase-page {
+    overflow: visible;
+  }
+
+  .home-showcase-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .home-menu-column {
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .home-compact-nav .nav-item {
+    width: auto;
+  }
+
+  .home-work-showcase {
+    max-width: 100%;
+  }
+
+  .home-work-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+    "dandelicat poster"
+    "amplify    poster"
+    "virus      fingers";
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .home-showcase-page {
+    padding: 28px 24px 60px;
+    overflow: visible;
+  }
+
+  .home-showcase-page .home-showcase-header {
+    margin-bottom: 40px;
+  }
+
+  .home-showcase-page .site-title {
+    font-size: clamp(3.6rem, 18vw, 6.2rem);
+    -webkit-text-stroke: 1.4px var(--pink);
+  }
+
+  .home-showcase-layout {
+    display: block;
+  }
+
+  .home-menu-column {
+    margin-bottom: 36px;
+  }
+
+  .home-compact-nav {
+    gap: 15px;
+  }
+
+  .home-compact-nav .nav-item {
+    width: 100%;
+    font-size: clamp(2rem, 10vw, 3.15rem);
+  }
+
+  .home-work-showcase-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "dandelicat"
+    "poster"
+    "virus"
+    "amplify"
+    "fingers";
+    gap: 20px;
+  }
+
+  .home-work-tile-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .tile-poster .home-work-tile-image-wrap {
+    aspect-ratio: 2 / 3;
+  }
+
+  .home-work-tile h2 {
+    font-size: 0.92rem;
+  }
+
+  .home-showcase-page .site-footer {
+    margin-top: 42px;
+  }
+}
+
+/* =========================================================
+Sub Pages: Shared Layout
+Used by: About / Works / Explorations / Resume / Reach Me
+========================================================= */
+
+.sub-page {
+  min-height: 100vh;
+  padding: 34px 7vw 56px;
+  position: relative;
+
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+/* =========================================================
+Sub Pages: Top Navigation
+Left: Home / Right: Page Links
+========================================================= */
+
+.sub-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+
+  margin-bottom: 74px;
+}
+
+.back-home {
+  color: var(--pink);
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+
+  transition:
+  opacity 0.2s ease,
+  transform 0.2s ease;
+}
+
+.back-home:hover {
+  opacity: 0.7;
+  transform: translateX(-3px);
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.sub-nav a {
+  color: var(--pink-56);
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  transition:
+  color 0.2s ease,
+  transform 0.2s ease;
+}
+
+.sub-nav a:hover {
+  color: var(--pink-95);
+  transform: translateY(-2px);
+}
+
+.sub-nav a.active,
+.sub-nav a[aria-current="page"] {
+  color: var(--pink);
+}
+
+/* =========================================================
+Sub Pages: Hero Section
+Page title area at the top
+========================================================= */
+
+.page-hero {
+  max-width: 900px;
   margin: 0 auto 72px;
-  padding-top: 34px;
-
-  border-top: 2px solid rgba(236, 61, 151, 0.22);
+  text-align: center;
 }
 
-.artwork-text-block h2,
-.artwork-secondary-section h2 {
-  margin: 0 0 22px;
+.page-kicker {
+  margin: 0 0 12px;
+
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--pink-62);
+}
+
+.page-title {
+  margin: 0;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(4rem, 11vw, 9rem);
+  line-height: 0.86;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  color: transparent;
+  -webkit-text-stroke: 1.8px var(--pink);
+
+  text-align: center;
+}
+
+.page-intro {
+  max-width: 720px;
+  margin: 26px auto 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.65;
+  font-weight: 500;
+
+  color: var(--ink-78);
+}
+
+/* =========================================================
+Sub Pages: Main Content Block
+Used by: About / Contact / Resume / Project Detail Text
+========================================================= */
+
+.content-block {
+  max-width: 760px;
+  margin: 0 auto;
+
+  padding: 34px 0 20px;
+  border-top: var(--border-soft);
+}
+
+.content-block h2 {
+  margin: 0 0 18px;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  font-weight: 700;
+
+  color: var(--pink);
+}
+
+.content-block p {
+  margin: 0 0 18px;
+
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: var(--ink-82);
+}
+
+.content-block a {
+  color: var(--pink);
+  font-weight: 700;
+}
+
+/* =========================================================
+Buttons
+Used by: Resume / Reach Me / Project Detail external links
+========================================================= */
+
+.resume-button,
+.message-button,
+.project-live-link {
+  display: inline-block;
+  padding: 11px 20px;
+
+  background: rgba(236, 61, 151, 0.76);
+  color: var(--cream) !important;
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  transition:
+  transform 0.2s ease,
+  background 0.2s ease;
+}
+
+.resume-button,
+.message-button {
+  margin-top: 12px;
+}
+
+.resume-button:hover,
+.message-button:hover,
+.project-live-link:hover {
+  transform: translateY(-3px);
+  background: var(--pink-95);
+}
+
+/* =========================================================
+Sub Pages: Bottom Navigation
+Previous / Home / Next
+========================================================= */
+
+.page-footer-nav {
+  max-width: 900px;
+  margin: 100px auto 0;
+  padding-top: 22px;
+
+  border-top: var(--border-soft);
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-link,
+.footer-home {
+  color: var(--pink);
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+
+  transition:
+  opacity 0.2s ease,
+  transform 0.2s ease,
+  background 0.2s ease;
+}
+
+.previous-link {
+  justify-self: start;
+}
+
+.next-link {
+  justify-self: end;
+}
+
+.footer-link:hover {
+  opacity: 0.72;
+}
+
+.previous-link:hover {
+  transform: translateX(-3px);
+}
+
+.next-link:hover {
+  transform: translateX(3px);
+}
+
+.footer-home {
+  justify-self: center;
+
+  padding: 8px 18px;
+  border: 2px solid var(--pink-78);
+  background: var(--cream-38);
+
+  color: var(--pink);
+}
+
+.footer-home:hover {
+  background: var(--pink-12);
+  transform: translateY(-2px);
+}
+
+.disabled-link {
+  color: var(--pink-28);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.disabled-link:hover {
+  transform: none;
+  opacity: 0.65;
+}
+
+/* =========================================================
+Reach Me Page
+Used by: contact.html
+========================================================= */
+
+.contact-card {
+  padding: 30px 34px 34px;
+
+  background: var(--cream-56);
+  border: var(--border-soft);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-card h2 {
+  margin-top: 0;
+}
+
+.contact-card p:last-of-type {
+  margin-bottom: 24px;
+}
+
+.contact-block {
+  padding: 34px 0 0;
+}
+
+.contact-block + .page-footer-nav {
+  max-width: 760px;
+  margin-top: 34px;
+}
+
+/* reach me */
+.contact-form-note {
+  margin-top: 18px !important;
+  margin-bottom: 0 !important;
+
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: rgba(36, 33, 36, 0.62) !important;
+}
+
+/* =========================================================
+Explorations Page
+Empty-state note for future experiments
+========================================================= */
+
+.exploration-note {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 42px 46px;
+
+  border: 2px solid rgba(236, 61, 151, 0.24);
+  background: rgba(255, 253, 249, 0.42);
+  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.055);
+}
+
+.exploration-note .note-label {
+  margin: 0 0 12px;
+
+  font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: rgba(236, 61, 151, 0.68);
+}
+
+.exploration-note h2 {
+  margin: 0 0 18px;
 
   font-family: "Pixelify Sans", "DM Sans", system-ui, sans-serif;
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
   line-height: 1;
   font-weight: 700;
 
   color: #ec3d97;
 }
 
-.artwork-text-block p,
-.artwork-secondary-section p {
-  margin: 0 0 18px;
+.exploration-note p {
+  margin: 0;
 
   font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.75;
 
   color: rgba(36, 33, 36, 0.82);
 }
 
-/* Secondary image / detail section */
-.artwork-secondary-section {
-  max-width: 980px;
-  margin: 0 auto;
-  padding-top: 34px;
-
-  border-top: 2px solid rgba(236, 61, 151, 0.22);
-}
-
-.artwork-secondary-section p {
-  max-width: 760px;
-}
-
-.artwork-secondary-figure {
-  margin: 32px 0 0;
-  padding: 0;
-}
-
-.artwork-secondary-image {
-  width: 100%;
-  display: block;
-
-  border: 2px solid rgba(236, 61, 151, 0.24);
-  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
-}
-
 @media (max-width: 700px) {
-  .artwork-detail-page .page-hero {
-    text-align: left;
-    margin-bottom: 42px;
-  }
-
-  .artwork-main-section {
-    margin-bottom: 48px;
-  }
-
-  .artwork-text-block,
-  .artwork-secondary-section {
-    padding-top: 28px;
-  }
-
-  .artwork-text-block h2,
-  .artwork-secondary-section h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
-  }
-}
-  
-  /* =========================================================
-     Works Detail Pages: Poster Context / Mockup Section
-     Used by: vwdandelicat-poster.html
-     ========================================================= */
-  
-  .poster-context-section,
-  .website-inside-section {
-    max-width: 980px;
-    margin: 76px auto 0;
-    padding-top: 34px;
-  
-    border-top: var(--border-soft);
-  }
-  
-  .poster-context-section h2,
-  .website-inside-section h2 {
-    margin: 0 0 24px;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    color: var(--pink);
-  }
-  
-  .poster-context-figure,
-  .website-inside-figure {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .poster-context-image,
-  .website-inside-image {
-    width: 100%;
-    display: block;
-  
-    border: var(--border-mid);
-    box-shadow: var(--shadow-image);
-  }
-  
-  
-  /* =========================================================
-     Works Detail Pages: Avery as System
-     Used by: vwavery-as-system.html
-     ========================================================= */
-  
-  .website-project-page .project-detail-content {
-    max-width: 1080px;
-    grid-template-columns: 460px minmax(0, 1fr);
-  }
-  
-  .website-project-page .website-detail-image {
-    max-width: 460px;
-  }
-  
-  .website-inside-section h2 {
-    margin-bottom: 18px;
-  }
-  
-  .website-inside-section p {
-    max-width: 760px;
-    margin: 0 0 28px;
-  
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.75;
-  
-    color: var(--ink-82);
-  }
-  
-  .project-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  
-    margin-top: 22px;
-  }
-
-  .long-detail-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 0.95;
-  }
-  
-  .long-project-title {
-    font-size: clamp(1.45rem, 2.5vw, 2.2rem) !important;
-    line-height: 1.05 !important;
-  }
-
-  /* =========================================================
-   Fingers Project
-   Used by: visual-works.html and vwfingers.html
-   ========================================================= */
-
-/* Works page thumbnail: crop vertical image to focus on garment */
-.fingers-thumb-wrap {
-  aspect-ratio: 4 / 3;
-}
-
-.fingers-thumb-image {
-  object-fit: cover;
-
-  /* Move crop focus lower to emphasize garment more than face */
-  object-position: center 58%;
-}
-
-/* Detail page: keep the full garment image visible */
-.fingers-main-image {
-  width: min(100%, 680px);
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* Center vertical artwork image inside its figure */
-.artwork-main-figure {
-  display: flex;
-  justify-content: center;
-}
-  
-  
-  /* =========================================================
-     Sub Pages: Bottom Navigation
-     Previous / Home / Next
-     ========================================================= */
-  
-  .page-footer-nav {
-    max-width: 900px;
-    margin: 100px auto 0;
-    padding-top: 22px;
-  
-    border-top: var(--border-soft);
-  
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  .footer-link,
-  .footer-home {
-    color: var(--pink);
-    text-decoration: none;
-  
-    font-family: var(--font-display);
-    font-size: 0.98rem;
-    font-weight: 700;
-  
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease,
-      background 0.2s ease;
-  }
-  
-  .previous-link {
-    justify-self: start;
-  }
-  
-  .next-link {
-    justify-self: end;
-  }
-  
-  .footer-link:hover {
-    opacity: 0.72;
-  }
-  
-  .previous-link:hover {
-    transform: translateX(-3px);
-  }
-  
-  .next-link:hover {
-    transform: translateX(3px);
-  }
-  
-  .footer-home {
-    justify-self: center;
-  
-    padding: 8px 18px;
-    border: 2px solid var(--pink-78);
-    background: var(--cream-38);
-  
-    color: var(--pink);
-  }
-  
-  .footer-home:hover {
-    background: var(--pink-12);
-    transform: translateY(-2px);
-  }
-  
-  .disabled-link {
-    color: var(--pink-28);
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.65;
-  }
-  
-  .disabled-link:hover {
-    transform: none;
-    opacity: 0.65;
-  }
-  
-  
-  /* =========================================================
-     Touch Devices
-     Mobile tap feedback for home page navigation
-     ========================================================= */
-  
-  @media (hover: none) {
-    .nav-item:active {
-      transform: translateX(10px);
-    }
-  
-    .nav-item:active .nav-rest {
-      color: var(--pink-82);
-    }
-  }
-  
-  
-  /* =========================================================
-     Responsive: Tablet
-     Applies to screens under 800px
-     ========================================================= */
-  
-  @media (max-width: 800px) {
-    .works-content {
-      max-width: 100%;
-    }
-  
-    .filter-chips {
-      gap: 10px;
-      margin-bottom: 34px;
-    }
-  
-    .filter-chip {
-      padding: 7px 14px;
-      font-size: 0.86rem;
-    }
-  
-    .featured-project-card,
-    .project-detail-content,
-    .website-project-page .project-detail-content {
-      grid-template-columns: 1fr;
-    }
-  
-    .featured-image-placeholder,
-    .featured-image-wrap {
-      min-height: 240px;
-      aspect-ratio: 4 / 3;
-  
-      border-right: none;
-      border-bottom: 2px solid var(--pink-18);
-    }
-  
-    .featured-project-info {
-      padding: 26px 24px 30px;
-    }
-  
-    .featured-project-info h3 {
-      font-size: clamp(2.3rem, 12vw, 3.4rem);
-    }
-  
-    .project-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-  
-    .project-card-content {
-      padding: 22px 22px 26px;
-    }
-  
-    .poster-display,
-    .website-detail-display {
-      margin-bottom: 42px;
-      justify-content: center;
-    }
-  
-    .poster-full-image {
-      max-width: 420px;
-    }
-  
-    .website-project-page .website-detail-image,
-    .detail-image-placeholder {
-      max-width: 100%;
-    }
-  
-    .project-info-block {
-      padding-top: 28px;
-      border-top: var(--border-soft);
-    }
-  }
-  
-  
-  /* =========================================================
-     Responsive: Mobile
-     Applies to screens under 700px
-     ========================================================= */
-  
-  @media (max-width: 700px) {
-    .home-page,
-    .sub-page {
-      padding: 28px 24px 64px;
-    }
-  
-    /* Home page mobile */
-    .hero-header {
-      margin-bottom: 46px;
-    }
-  
-    .site-title {
-      font-size: clamp(3.6rem, 18vw, 6.2rem);
-      -webkit-text-stroke: 1.4px var(--pink);
-    }
-  
-    .deco-left {
-      left: 0;
-      top: -0.3rem;
-    }
-  
-    .deco-left-small {
-      left: 1.2rem;
-      bottom: -0.8rem;
-    }
-  
-    .deco-right {
-      right: 0;
-      top: -0.2rem;
-    }
-  
-    .deco-right-small {
-      right: 2rem;
-      bottom: -0.9rem;
-    }
-  
-    .intro-ribbon {
-      margin-top: 24px;
-      padding: 9px 24px;
-      font-size: 0.82rem;
-      text-align: center;
-    }
-  
-    .main-nav {
-      gap: 15px;
-    }
-  
-    .nav-item {
-      width: 100%;
-      padding: 8px 0;
-    }
-  
-    .nav-rest {
-      color: rgba(236, 61, 151, 0.5);
-    }
-  
-    /* Sub page mobile */
-    .sub-header {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 18px;
-      margin-bottom: 56px;
-    }
-  
-    .sub-nav {
-      justify-content: flex-start;
-      gap: 12px 16px;
-    }
-  
-    .sub-nav a {
-      font-size: 0.9rem;
-    }
-  
-    .page-hero {
-      margin-bottom: 54px;
-      text-align: left;
-    }
-  
-    .page-kicker {
-      text-align: left;
-    }
-  
-    .page-title {
-      font-size: clamp(3.4rem, 18vw, 5.8rem);
-      -webkit-text-stroke: 1.3px var(--pink);
-      text-align: left;
-    }
-  
-    .page-intro {
-      margin-top: 22px;
-      font-size: 1rem;
-    }
-  
-    .content-block {
-      padding-top: 28px;
-    }
-  
-    .content-block h2 {
-      font-size: clamp(2rem, 10vw, 3rem);
-    }
-  
-    .contact-card {
-      padding: 24px 22px 28px;
-    }
-  
-    /* Works detail mobile */
-    .works-detail-page .page-hero,
-    .works-detail-page .page-kicker,
-    .works-detail-title {
-      text-align: left;
-    }
-  
-    .works-detail-title {
-      font-size: clamp(2.7rem, 14vw, 4.4rem);
-    }
-  
-    .poster-full-image,
-    .website-detail-image {
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    .poster-context-section,
-    .website-inside-section {
-      margin-top: 56px;
-      padding-top: 28px;
-    }
-  
-    .poster-context-section h2,
-    .website-inside-section h2 {
-      font-size: clamp(2rem, 10vw, 3rem);
-    }
-  
-    /* Footer mobile */
-    .page-footer-nav {
-      margin-top: 72px;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      text-align: center;
-    }
-  
-    .previous-link,
-    .next-link,
-    .footer-home {
-      justify-self: center;
-    }
-  }
-
-  /* Spatial project detail image */
-.spatial-detail-image {
-  max-width: 460px;
-  aspect-ratio: auto;
-  object-fit: contain;
-}
-
-/* =========================================================
-   Fingers Project
-   Used by: visual-works.html and vwfingers.html
-   ========================================================= */
-
-/* Works page thumbnail: crop vertical image to focus on garment */
-.fingers-thumb-wrap {
-  aspect-ratio: 4 / 3;
-}
-
-.fingers-thumb-image {
-  object-fit: cover;
-
-  /* Move crop focus lower to show more of the garment body */
-  object-position: center 45%;
-}
-
-/* Detail page: keep the full hero garment image visible */
-.fingers-main-image {
-  width: min(100%, 680px);
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* Center vertical artwork image inside its figure */
-.artwork-main-figure {
-  display: flex;
-  justify-content: center;
-}
-
-/* Two supporting images side by side */
-.artwork-image-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.artwork-image-pair .artwork-secondary-figure {
-  margin: 0;
-}
-
-.artwork-image-pair .artwork-secondary-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-@media (max-width: 700px) {
-  .artwork-image-pair {
-    grid-template-columns: 1fr;
+  .exploration-note {
+    padding: 30px 24px;
   }
 }
 
 /* =========================================================
-   Works Page: Filtering
-   Hide project cards / sections when filters are active
-   ========================================================= */
-
-   .is-hidden {
-    display: none !important;
-  }
-
-/* =========================================================
-   Page Motion
-   Subtle page fade + project card reveal
-   ========================================================= */
-
-   body {
-    opacity: 0;
-    transform: translateY(8px);
-    transition:
-      opacity 0.45s ease,
-      transform 0.45s ease;
-  }
-  
-  body.page-loaded {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  body.page-leaving {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  
-  /* Project card reveal */
-  .project-card {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  
-  body.page-loaded .project-card {
-    animation: cardReveal 0.55s ease forwards;
-  }
-  
-  body.page-loaded .project-card:nth-of-type(1) {
-    animation-delay: 0.05s;
-  }
-  
-  body.page-loaded .project-card:nth-of-type(2) {
-    animation-delay: 0.1s;
-  }
-  
-  body.page-loaded .project-card:nth-of-type(3) {
-    animation-delay: 0.15s;
-  }
-  
-  body.page-loaded .project-card:nth-of-type(4) {
-    animation-delay: 0.2s;
-  }
-  
-  body.page-loaded .project-card:nth-of-type(5) {
-    animation-delay: 0.25s;
-  }
-  
-  @keyframes cardReveal {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Respect reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    body,
-    .project-card {
-      opacity: 1;
-      transform: none;
-      transition: none;
-      animation: none !important;
-    }
-  }
-
-/* =========================================================
-   Explorations Page
-   Empty-state note for future experiments
-   ========================================================= */
-
-   .exploration-note {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 42px 46px;
-  
-    border: 2px solid rgba(236, 61, 151, 0.24);
-    background: rgba(255, 253, 249, 0.42);
-    box-shadow: 0 14px 34px rgba(236, 61, 151, 0.055);
-  }
-  
-  .exploration-note .note-label {
-    margin: 0 0 12px;
-  
-    font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
-    font-size: 0.86rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  
-    color: rgba(236, 61, 151, 0.68);
-  }
-  
-  .exploration-note h2 {
-    margin: 0 0 18px;
-  
-    font-family: "Pixelify Sans", "DM Sans", system-ui, sans-serif;
-    font-size: clamp(2.2rem, 4.8vw, 3.6rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    color: #ec3d97;
-  }
-  
-  .exploration-note p {
-    margin: 0;
-  
-    font-family: "DM Sans", system-ui, sans-serif;
-    font-size: 1.08rem;
-    line-height: 1.75;
-  
-    color: rgba(36, 33, 36, 0.82);
-  }
-  
-  @media (max-width: 700px) {
-    .exploration-note {
-      padding: 30px 24px;
-    }
-  }
-
-  /* =========================================================
-   Resume Page
-   Used by: resume.html
-   ========================================================= */
+Resume Page
+Used by: resume.html
+========================================================= */
 
 .resume-content {
   max-width: 900px;
@@ -1883,175 +1104,970 @@
   }
 }
 
-/* reach me */
-.contact-form-note {
-  margin-top: 18px !important;
-  margin-bottom: 0 !important;
+/* =========================================================
+Works Page: Main Layout
+Used by: visual-works.html
+========================================================= */
 
-  font-size: 0.95rem !important;
-  line-height: 1.6 !important;
-  color: rgba(36, 33, 36, 0.62) !important;
+.works-page .page-hero {
+  margin-top: 10px;
+  margin-bottom: 54px;
+}
+
+.works-page .page-title {
+  font-size: clamp(3.8rem, 9vw, 7.6rem);
+}
+
+.works-content {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 /* =========================================================
-   Photography Detail Pages
-   Used by: vwchromatic-surface.html and future photography pages
-   ========================================================= */
+Works Page: Filter Chips
+Clickable project filters
+========================================================= */
 
-   .photography-detail-page .page-hero {
-    max-width: 1000px;
-    margin: 0 auto 54px;
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 46px;
+  padding-top: 6px;
+}
+
+.filter-chip {
+  border: 2px solid var(--pink-48);
+  border-radius: 999px;
+
+  background: var(--cream-46);
+  color: var(--pink-82);
+
+  padding: 8px 18px;
+
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+  background 0.2s ease,
+  color 0.2s ease,
+  transform 0.2s ease,
+  border-color 0.2s ease;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  background: var(--pink-78);
+  border-color: var(--pink-78);
+  color: var(--cream);
+}
+
+.filter-chip:hover {
+  transform: translateY(-2px);
+}
+
+.filter-chip:focus {
+  outline: none;
+}
+
+.filter-chip:focus-visible {
+  outline: 3px dashed rgba(236, 61, 151, 0.55);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+Works Page: Section Titles
+Used by: Featured Project / Selected Projects
+========================================================= */
+
+.section-title {
+  margin: 0 0 20px;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1;
+  font-weight: 700;
+
+  color: var(--pink);
+}
+
+.featured-work-section {
+  margin-bottom: 72px;
+}
+
+.featured-work-section .section-title {
+  font-size: clamp(2.5rem, 4.8vw, 4rem);
+  margin-bottom: 24px;
+}
+
+.selected-works-section {
+  margin-top: 8px;
+}
+
+.selected-works-section .section-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 24px;
+}
+
+/* =========================================================
+Works Page: Shared Project Card Styles
+========================================================= */
+
+.project-card {
+  border: var(--border-soft);
+  background: var(--cream-52);
+
+  box-shadow: 0 10px 28px rgba(236, 61, 151, 0.045);
+
+  transition:
+  transform 0.2s ease,
+  border-color 0.2s ease,
+  box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pink-42);
+  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
+}
+
+.project-card h3 {
+  margin: 0 0 12px;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1;
+  font-weight: 700;
+
+  color: var(--pink);
+}
+
+.project-card p {
+  margin: 0 0 18px;
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+
+  color: var(--ink-82);
+}
+
+.project-meta {
+  margin-bottom: 10px !important;
+
+  font-family: var(--font-display) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.4 !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: var(--pink-62) !important;
+}
+
+/* Long project title inside Works cards */
+.long-project-title {
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem) !important;
+  line-height: 1.05 !important;
+}
+
+/* =========================================================
+Works Page: Project Images
+Real images and placeholders
+========================================================= */
+
+.project-image-placeholder,
+.project-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  border-bottom: 2px solid var(--pink-18);
+  background: var(--cream-38);
+}
+
+.project-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  background:
+  radial-gradient(circle at 35% 35%, rgba(196, 232, 255, 0.7), transparent 34%),
+  radial-gradient(circle at 72% 62%, rgba(255, 231, 120, 0.35), transparent 30%),
+  var(--cream-38);
+
+  color: rgba(236, 61, 151, 0.48);
+  text-align: center;
+
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.project-image-wrap {
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.featured-image-placeholder,
+.featured-image-wrap {
+  min-height: 360px;
+  aspect-ratio: auto;
+}
+
+.featured-image-wrap {
+  border-bottom: none;
+  border-right: 2px solid var(--pink-18);
+}
+
+.poster-thumb-wrap {
+  aspect-ratio: 4 / 3;
+  background: var(--cream-38);
+}
+
+.poster-thumb-image {
+  object-fit: cover;
+  object-position: center 34%;
+}
+
+/* =========================================================
+Works Page: Featured Project
+Dandelicat large card
+========================================================= */
+
+.featured-project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 0.88fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.featured-project-info {
+  padding: 34px 36px 38px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-project-info h3 {
+  font-size: clamp(2.4rem, 3.4vw, 3.5rem);
+  line-height: 0.95;
+  word-break: normal;
+}
+
+.featured-project-info p {
+  max-width: 480px;
+}
+
+/* =========================================================
+Works Page: Project Tags
+Non-clickable labels inside project cards
+========================================================= */
+
+.project-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin: 0 0 22px;
+  padding: 0;
+}
+
+.project-tags li {
+  padding: 5px 10px;
+
+  border: 1.5px solid var(--pink-24);
+  border-radius: 0;
+
+  background: var(--cream-24);
+  color: var(--pink-70);
+
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  cursor: default;
+}
+
+/* =========================================================
+Works Page: Project Links
+========================================================= */
+
+.project-link {
+  width: fit-content;
+  display: inline-block;
+
+  color: var(--pink);
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  border-bottom: 2px solid rgba(236, 61, 151, 0.5);
+
+  transition:
+  color 0.2s ease,
+  border-color 0.2s ease,
+  transform 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--pink-78);
+  border-color: rgba(236, 61, 151, 0.9);
+  transform: translateX(3px);
+}
+
+.placeholder-link {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* =========================================================
+Works Page: Selected Projects Grid
+========================================================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.small-project-card {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-content {
+  flex: 1;
+  padding: 24px 26px 28px;
+}
+
+.small-project-card h3 {
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+}
+
+/* =========================================================
+Works Page: Filtering
+Hide project cards / sections when filters are active
+========================================================= */
+
+.is-hidden {
+  display: none !important;
+}
+
+/* =========================================================
+Works Detail Pages: Shared Layout
+Used by: vwdandelicat-poster.html / vwavery-as-system.html
+========================================================= */
+
+.works-detail-page .page-hero {
+  max-width: 980px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.works-detail-page .page-kicker {
+  text-align: center;
+}
+
+.works-detail-title {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+
+  font-size: clamp(3rem, 6.2vw, 5.2rem);
+  line-height: 0.9;
+  text-align: center;
+}
+
+.project-detail-content {
+  max-width: 980px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 58px;
+  align-items: start;
+}
+
+.poster-display,
+.website-detail-display {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.poster-full-image,
+.website-detail-image,
+.detail-image-placeholder {
+  width: 100%;
+  max-width: 340px;
+
+  border: var(--border-mid);
+  box-shadow: var(--shadow-image);
+}
+
+.poster-full-image,
+.website-detail-image {
+  height: auto;
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+.project-info-block {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+
+  border-top: none;
+}
+
+.project-info-block h2 {
+  margin-top: 0;
+}
+
+.project-info-block p {
+  max-width: 520px;
+}
+
+/* =========================================================
+Works Detail Pages: Poster Context / Mockup Section
+Used by: vwdandelicat-poster.html
+========================================================= */
+
+.poster-context-section,
+.website-inside-section {
+  max-width: 980px;
+  margin: 76px auto 0;
+  padding-top: 34px;
+
+  border-top: var(--border-soft);
+}
+
+.poster-context-section h2,
+.website-inside-section h2 {
+  margin: 0 0 24px;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  font-weight: 700;
+
+  color: var(--pink);
+}
+
+.poster-context-figure,
+.website-inside-figure {
+  margin: 0;
+  padding: 0;
+}
+
+.poster-context-image,
+.website-inside-image {
+  width: 100%;
+  display: block;
+
+  border: var(--border-mid);
+  box-shadow: var(--shadow-image);
+}
+
+/* =========================================================
+Works Detail Pages: Avery as System
+Used by: vwavery-as-system.html
+========================================================= */
+
+.website-project-page .project-detail-content {
+  max-width: 1080px;
+  grid-template-columns: 460px minmax(0, 1fr);
+}
+
+.website-project-page .website-detail-image {
+  max-width: 460px;
+}
+
+.website-inside-section h2 {
+  margin-bottom: 18px;
+}
+
+.website-inside-section p {
+  max-width: 760px;
+  margin: 0 0 28px;
+
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: var(--ink-82);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.long-detail-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+}
+
+/* =========================================================
+Large First Image Project Pages
+Used by: pages with .large-first-image-page
+========================================================= */
+
+.large-first-image-page .page-hero {
+  max-width: 1080px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.project-cover-section {
+  max-width: 1080px;
+  margin: 0 auto 72px;
+}
+
+.project-cover-figure {
+  margin: 0;
+  padding: 0;
+}
+
+.project-cover-image {
+  width: 100%;
+  display: block;
+
+  border: 2px solid rgba(236, 61, 151, 0.22);
+  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
+}
+
+.large-project-info-block {
+  max-width: 760px;
+  margin: 0 auto 76px;
+  padding-top: 34px;
+
+  border-top: 2px solid rgba(236, 61, 151, 0.22);
+}
+
+/* Keep the text readable after removing the two-column layout */
+.large-project-info-block h2 {
+  margin-top: 0;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .large-first-image-page .page-hero {
+    text-align: left;
+    margin-bottom: 42px;
   }
-  
-  /* Large cover image */
+
+  .project-cover-section {
+    margin-bottom: 52px;
+  }
+
+  .large-project-info-block {
+    margin-bottom: 58px;
+    padding-top: 28px;
+  }
+}
+
+/* =========================================================
+Dandelicat Poster Large Page
+Used by: vwdandelicat-poster.html
+========================================================= */
+
+.poster-large-page .poster-cover-section {
+  max-width: 720px;
+  margin: 0 auto 72px;
+}
+
+.poster-large-page .poster-cover-image {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border: 2px solid rgba(236, 61, 151, 0.22);
+  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
+}
+
+.poster-large-page .poster-context-section {
+  max-width: 980px;
+  margin: 0 auto 76px;
+}
+
+.poster-large-page .poster-context-section h2 {
+  margin-bottom: 24px;
+}
+
+.poster-large-page .poster-context-image {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .poster-large-page .poster-cover-section {
+    max-width: 100%;
+    margin-bottom: 52px;
+  }
+
+  .poster-large-page .poster-context-section {
+    margin-bottom: 58px;
+  }
+}
+
+/* =========================================================
+Artwork Detail Pages
+Used by: vwthe-virus.html and future fine art / spatial pages
+========================================================= */
+
+.artwork-detail-page .page-hero {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+/* Large artwork image first */
+.artwork-main-section {
+  max-width: 980px;
+  margin: 0 auto 64px;
+}
+
+.artwork-main-figure {
+  margin: 0;
+  padding: 0;
+}
+
+.artwork-main-image {
+  width: 100%;
+  display: block;
+
+  border: 2px solid rgba(236, 61, 151, 0.24);
+  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
+}
+
+/* Text block below the main image */
+.artwork-text-block {
+  max-width: 760px;
+  margin: 0 auto 72px;
+  padding-top: 34px;
+
+  border-top: 2px solid rgba(236, 61, 151, 0.22);
+}
+
+.artwork-text-block h2,
+.artwork-secondary-section h2 {
+  margin: 0 0 22px;
+
+  font-family: "Pixelify Sans", "DM Sans", system-ui, sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  font-weight: 700;
+
+  color: #ec3d97;
+}
+
+.artwork-text-block p,
+.artwork-secondary-section p {
+  margin: 0 0 18px;
+
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: rgba(36, 33, 36, 0.82);
+}
+
+/* Secondary image / detail section */
+.artwork-secondary-section {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 34px;
+
+  border-top: 2px solid rgba(236, 61, 151, 0.22);
+}
+
+.artwork-secondary-section p {
+  max-width: 760px;
+}
+
+.artwork-secondary-figure {
+  margin: 32px 0 0;
+  padding: 0;
+}
+
+.artwork-secondary-image {
+  width: 100%;
+  display: block;
+
+  border: 2px solid rgba(236, 61, 151, 0.24);
+  box-shadow: 0 14px 34px rgba(236, 61, 151, 0.08);
+}
+
+@media (max-width: 700px) {
+  .artwork-detail-page .page-hero {
+    text-align: left;
+    margin-bottom: 42px;
+  }
+
+  .artwork-main-section {
+    margin-bottom: 48px;
+  }
+
+  .artwork-text-block,
+  .artwork-secondary-section {
+    padding-top: 28px;
+  }
+
+  .artwork-text-block h2,
+  .artwork-secondary-section h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+}
+
+/* Spatial project detail image */
+.spatial-detail-image {
+  max-width: 460px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* =========================================================
+Fingers Project
+Used by: visual-works.html and vwfingers.html
+========================================================= */
+
+/* Works page thumbnail: crop vertical image to focus on garment */
+.fingers-thumb-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+.fingers-thumb-image {
+  object-fit: cover;
+
+  /* Move crop focus lower to show more of the garment body */
+  object-position: center 45%;
+}
+
+/* Detail page: keep the full hero garment image visible */
+.fingers-main-image {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Center vertical artwork image inside its figure */
+.artwork-main-figure {
+  display: flex;
+  justify-content: center;
+}
+
+/* Two supporting images side by side */
+.artwork-image-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.artwork-image-pair .artwork-secondary-figure {
+  margin: 0;
+}
+
+.artwork-image-pair .artwork-secondary-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .artwork-image-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+Photography Detail Pages
+Used by: vwchromatic-surface.html and future photography pages
+========================================================= */
+
+.photography-detail-page .page-hero {
+  max-width: 1000px;
+  margin: 0 auto 54px;
+}
+
+/* Large cover image */
+.photo-cover-section {
+  max-width: 1080px;
+  margin: 0 auto 76px;
+}
+
+.photo-cover-figure {
+  margin: 0;
+  padding: 0;
+}
+
+.photo-cover-image {
+  width: 100%;
+  display: block;
+
+  border: var(--border-mid);
+  box-shadow: var(--shadow-image);
+}
+
+/* Text block */
+.photo-text-block {
+  max-width: 760px;
+  margin: 0 auto 78px;
+  padding-top: 34px;
+
+  border-top: var(--border-soft);
+}
+
+.photo-text-block h2,
+.photo-gallery-section h2 {
+  margin: 0 0 24px;
+
+  font-family: var(--font-pixel);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  font-weight: 700;
+
+  color: var(--pink);
+}
+
+.photo-text-block p,
+.photo-gallery-section p {
+  margin: 0 0 18px;
+
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: var(--ink-82);
+}
+
+/* Gallery section */
+.photo-gallery-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 38px;
+
+  border-top: var(--border-soft);
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* Unified image frame */
+.photo-gallery-item {
+  margin: 0;
+  padding: 0;
+
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  border: var(--border-mid);
+  box-shadow: var(--shadow-image);
+  background: rgba(255, 253, 249, 0.42);
+}
+
+.photo-gallery-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Works card cover for Chromatic Surface Studies */
+.chromatic-thumb-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Optional crop helpers for individual images */
+.photo-position-top {
+  object-position: center top;
+}
+
+.photo-position-bottom {
+  object-position: center bottom;
+}
+
+.photo-position-left {
+  object-position: left center;
+}
+
+.photo-position-right {
+  object-position: right center;
+}
+
+@media (max-width: 700px) {
+  .photography-detail-page .page-hero {
+    text-align: left;
+    margin-bottom: 42px;
+  }
+
   .photo-cover-section {
-    max-width: 1080px;
-    margin: 0 auto 76px;
+    margin-bottom: 54px;
   }
-  
-  .photo-cover-figure {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .photo-cover-image {
-    width: 100%;
-    display: block;
-  
-    border: var(--border-mid);
-    box-shadow: var(--shadow-image);
-  }
-  
-  /* Text block */
+
   .photo-text-block {
-    max-width: 760px;
-    margin: 0 auto 78px;
-    padding-top: 34px;
-  
-    border-top: var(--border-soft);
+    margin-bottom: 58px;
   }
-  
+
+  .photo-text-block,
+  .photo-gallery-section {
+    padding-top: 28px;
+  }
+
   .photo-text-block h2,
   .photo-gallery-section h2 {
-    margin: 0 0 24px;
-  
-    font-family: var(--font-pixel);
-    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-    line-height: 1;
-    font-weight: 700;
-  
-    color: var(--pink);
-  }
-  
-  .photo-text-block p,
-  .photo-gallery-section p {
-    margin: 0 0 18px;
-  
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.75;
-  
-    color: var(--ink-82);
-  }
-  
-  /* Gallery section */
-  .photo-gallery-section {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding-top: 38px;
-  
-    border-top: var(--border-soft);
-  }
-  
-  .photo-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
-  }
-  
-  /* Unified image frame */
-  .photo-gallery-item {
-    margin: 0;
-    padding: 0;
-  
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-  
-    border: var(--border-mid);
-    box-shadow: var(--shadow-image);
-    background: rgba(255, 253, 249, 0.42);
-  }
-  
-  .photo-gallery-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-  
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  /* Works card cover for Chromatic Surface Studies */
-  .chromatic-thumb-image {
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  /* Optional crop helpers for individual images */
-  .photo-position-top {
-    object-position: center top;
-  }
-  
-  .photo-position-bottom {
-    object-position: center bottom;
-  }
-  
-  .photo-position-left {
-    object-position: left center;
-  }
-  
-  .photo-position-right {
-    object-position: right center;
-  }
-  
-  @media (max-width: 700px) {
-    .photography-detail-page .page-hero {
-      text-align: left;
-      margin-bottom: 42px;
-    }
-  
-    .photo-cover-section {
-      margin-bottom: 54px;
-    }
-  
-    .photo-text-block {
-      margin-bottom: 58px;
-    }
-  
-    .photo-text-block,
-    .photo-gallery-section {
-      padding-top: 28px;
-    }
-  
-    .photo-text-block h2,
-    .photo-gallery-section h2 {
-      font-size: clamp(2rem, 10vw, 3rem);
-    }
-  
-    .photo-gallery-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-  
-    .photo-gallery-item {
-      aspect-ratio: 4 / 3;
-    }
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
-  /* =========================================================
-   Shadow and Structure Studies
-   Used by: visual-works.html and vwshadow-structure.html
-   ========================================================= */
+  .photo-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .photo-gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* =========================================================
+Shadow and Structure Studies
+Used by: visual-works.html and vwshadow-structure.html
+========================================================= */
 
 .shadow-thumb-image {
   object-fit: cover;
@@ -2118,4 +2134,315 @@
     aspect-ratio: 4 / 3;
   }
 }
-/* deployment retry */
+
+/* =========================================================
+Page Motion
+Subtle page fade + project card reveal
+========================================================= */
+
+body {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+  opacity 0.45s ease,
+  transform 0.45s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.page-leaving {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Project card reveal */
+.project-card {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+body.page-loaded .project-card {
+  animation: cardReveal 0.55s ease forwards;
+}
+
+body.page-loaded .project-card:nth-of-type(1) {
+  animation-delay: 0.05s;
+}
+
+body.page-loaded .project-card:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+body.page-loaded .project-card:nth-of-type(3) {
+  animation-delay: 0.15s;
+}
+
+body.page-loaded .project-card:nth-of-type(4) {
+  animation-delay: 0.2s;
+}
+
+body.page-loaded .project-card:nth-of-type(5) {
+  animation-delay: 0.25s;
+}
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .project-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+Touch Devices
+Mobile tap feedback for home page navigation
+========================================================= */
+
+@media (hover: none) {
+  .nav-item:active {
+    transform: translateX(10px);
+  }
+
+  .nav-item:active .nav-rest {
+    color: var(--pink-82);
+  }
+}
+
+/* =========================================================
+Responsive: Tablet
+Applies to screens under 800px
+========================================================= */
+
+@media (max-width: 800px) {
+  .works-content {
+    max-width: 100%;
+  }
+
+  .filter-chips {
+    gap: 10px;
+    margin-bottom: 34px;
+  }
+
+  .filter-chip {
+    padding: 7px 14px;
+    font-size: 0.86rem;
+  }
+
+  .featured-project-card,
+  .project-detail-content,
+  .website-project-page .project-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-image-placeholder,
+  .featured-image-wrap {
+    min-height: 240px;
+    aspect-ratio: 4 / 3;
+
+    border-right: none;
+    border-bottom: 2px solid var(--pink-18);
+  }
+
+  .featured-project-info {
+    padding: 26px 24px 30px;
+  }
+
+  .featured-project-info h3 {
+    font-size: clamp(2.3rem, 12vw, 3.4rem);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card-content {
+    padding: 22px 22px 26px;
+  }
+
+  .poster-display,
+  .website-detail-display {
+    margin-bottom: 42px;
+    justify-content: center;
+  }
+
+  .poster-full-image {
+    max-width: 420px;
+  }
+
+  .website-project-page .website-detail-image,
+  .detail-image-placeholder {
+    max-width: 100%;
+  }
+
+  .project-info-block {
+    padding-top: 28px;
+    border-top: var(--border-soft);
+  }
+}
+
+/* =========================================================
+Responsive: Mobile
+Applies to screens under 700px
+========================================================= */
+
+@media (max-width: 700px) {
+  .home-page,
+  .sub-page {
+    padding: 28px 24px 64px;
+  }
+
+  /* Home page mobile */
+  .hero-header {
+    margin-bottom: 46px;
+  }
+
+  .site-title {
+    font-size: clamp(3.6rem, 18vw, 6.2rem);
+    -webkit-text-stroke: 1.4px var(--pink);
+  }
+
+  .deco-left {
+    left: 0;
+    top: -0.3rem;
+  }
+
+  .deco-left-small {
+    left: 1.2rem;
+    bottom: -0.8rem;
+  }
+
+  .deco-right {
+    right: 0;
+    top: -0.2rem;
+  }
+
+  .deco-right-small {
+    right: 2rem;
+    bottom: -0.9rem;
+  }
+
+  .intro-ribbon {
+    margin-top: 24px;
+    padding: 9px 24px;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .main-nav {
+    gap: 15px;
+  }
+
+  .nav-item {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .nav-rest {
+    color: rgba(236, 61, 151, 0.5);
+  }
+
+  /* Sub page mobile */
+  .sub-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 56px;
+  }
+
+  .sub-nav {
+    justify-content: flex-start;
+    gap: 12px 16px;
+  }
+
+  .sub-nav a {
+    font-size: 0.9rem;
+  }
+
+  .page-hero {
+    margin-bottom: 54px;
+    text-align: left;
+  }
+
+  .page-kicker {
+    text-align: left;
+  }
+
+  .page-title {
+    font-size: clamp(3.4rem, 18vw, 5.8rem);
+    -webkit-text-stroke: 1.3px var(--pink);
+    text-align: left;
+  }
+
+  .page-intro {
+    margin-top: 22px;
+    font-size: 1rem;
+  }
+
+  .content-block {
+    padding-top: 28px;
+  }
+
+  .content-block h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .contact-card {
+    padding: 24px 22px 28px;
+  }
+
+  /* Works detail mobile */
+  .works-detail-page .page-hero,
+  .works-detail-page .page-kicker,
+  .works-detail-title {
+    text-align: left;
+  }
+
+  .works-detail-title {
+    font-size: clamp(2.7rem, 14vw, 4.4rem);
+  }
+
+  .poster-full-image,
+  .website-detail-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .poster-context-section,
+  .website-inside-section {
+    margin-top: 56px;
+    padding-top: 28px;
+  }
+
+  .poster-context-section h2,
+  .website-inside-section h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  /* Footer mobile */
+  .page-footer-nav {
+    margin-top: 72px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .previous-link,
+  .next-link,
+  .footer-home {
+    justify-self: center;
+  }
+}

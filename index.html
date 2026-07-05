@@ -1,24 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <title>Avery Liu Portfolio</title>
-  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Pixelify+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" 
-      rel="stylesheet"
-    >
-  
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Avery Liu Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Pixelify+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" 
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+</head>
 
 <body>
-  <main class="home-page">
+  <main class="home-page home-showcase-page">
 
-    <header class="hero-header">
+    <header class="hero-header home-showcase-header">
       <div class="title-wrap">
         <span class="title-deco deco-left">✦</span>
         <span class="title-deco deco-left-small">♡</span>
@@ -36,28 +38,104 @@
       </p>
     </header>
 
-    <section class="hero-content">
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="about.html" class="nav-item">
-          <span class="nav-first">A</span><span class="nav-rest">bout Me</span>
-        </a>
+    <section class="home-showcase-layout">
 
-        <a href="visual-works.html" class="nav-item">
-          <span class="nav-first">V</span><span class="nav-rest">isual Works</span>
-        </a>
-
-        <a href="explorations.html" class="nav-item">
-          <span class="nav-first">E</span><span class="nav-rest">xplorations</span>
-        </a>
-
-        <a href="resume.html" class="nav-item">
-          <span class="nav-first">R</span><span class="nav-rest">esume</span>
-        </a>
-
-        <a href="contact.html" class="nav-item">
-          <span class="nav-first">Y</span><span class="nav-rest">ou Can Reach Me</span>
-        </a>
-      </nav>
+      <aside class="home-menu-column" aria-label="Portfolio navigation">
+        <nav class="main-nav home-compact-nav" aria-label="Main navigation">
+          <a href="about.html" class="nav-item">
+            <span class="nav-first">A</span><span class="nav-rest">bout Me</span>
+          </a>
+    
+          <a href="visual-works.html" class="nav-item">
+            <span class="nav-first">V</span><span class="nav-rest">isual Works</span>
+          </a>
+    
+          <a href="explorations.html" class="nav-item">
+            <span class="nav-first">E</span><span class="nav-rest">xplorations</span>
+          </a>
+    
+          <a href="resume.html" class="nav-item">
+            <span class="nav-first">R</span><span class="nav-rest">esume</span>
+          </a>
+    
+          <a href="contact.html" class="nav-item">
+            <span class="nav-first">Y</span><span class="nav-rest">ou Can Reach Me</span>
+          </a>
+        </nav>
+      </aside>
+    
+      <section class="home-work-showcase" aria-label="Selected works on homepage">
+        <div class="home-work-showcase-grid">
+    
+          <!-- Dandelicat -->
+          <a 
+            href="https://parsons.edu/dt-2026/dandelicat/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="home-work-tile tile-dandelicat"
+          >
+            <div class="home-work-tile-image-wrap">
+              <img 
+                src="dandelicat.png" 
+                alt="Screenshot of Dandelicat interactive thesis website"
+                class="home-work-tile-image"
+              >
+            </div>
+            <h2>Dandelicat</h2>
+          </a>
+    
+          <!-- Dandelicat Poster -->
+          <a href="vwdandelicat-poster.html" class="home-work-tile tile-poster">
+            <div class="home-work-tile-image-wrap home-work-poster-wrap">
+              <img 
+                src="DandelicatPoster.jpg" 
+                alt="Dandelicat poster featuring a surreal dandelion-cat figure in a dreamlike hallway"
+                class="home-work-tile-image home-work-poster-image"
+              >
+            </div>
+            <h2>Dandelicat Poster</h2>
+          </a>
+    
+          <!-- The Virus -->
+          <a href="vwthe-virus.html" class="home-work-tile tile-virus">
+            <div class="home-work-tile-image-wrap">
+              <img 
+                src="vcover.jpeg" 
+                alt="Wearable light sculpture carried on the body, casting colorful light in a dark space"
+                class="home-work-tile-image"
+              >
+            </div>
+            <h2>The Virus</h2>
+          </a>
+    
+          <!-- Amplify -->
+          <a href="vwamplify-verbal-exchanges.html" class="home-work-tile tile-amplify">
+            <div class="home-work-tile-image-wrap">
+              <img 
+                src="AVERY-Cover.PNG" 
+                alt="Screenshot from Amplify Verbal Exchanges Rekindle Yourself"
+                class="home-work-tile-image"
+              >
+            </div>
+            <h2>Amplify Verbal Exchanges Rekindle Yourself</h2>
+          </a>
+    
+          <!-- Fingers -->
+          <a href="vwfingers.html" class="home-work-tile tile-fingers">
+            <div class="home-work-tile-image-wrap">
+              <img 
+                src="fingers.jpeg" 
+                alt="Wearable soft sculpture inspired by enlarged finger forms"
+                class="home-work-tile-image home-work-fingers-image"
+              >
+            </div>
+            <h2>Fingers</h2>
+          </a>
+    
+        </div>
+    
+      </section>
+    
     </section>
 
     <footer class="site-footer">
