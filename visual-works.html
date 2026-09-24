@@ -8,6 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link 
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Pixelify+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" 
     rel="stylesheet"
@@ -45,18 +46,79 @@
     <section class="works-content">
 
       <div class="filter-chips" aria-label="Project filters">
-        <button class="filter-chip active" type="button" data-filter="all">All</button>
-        <button class="filter-chip" type="button" data-filter="web">Web & Interactive</button>
-        <button class="filter-chip" type="button" data-filter="graphic">Graphic Design</button>
-        <button class="filter-chip" type="button" data-filter="photo">Photography</button>
-        <button class="filter-chip" type="button" data-filter="spatial">Visual & Spatial</button>
+        <button class="filter-chip active" type="button" data-filter="all">
+          All
+        </button>
+
+        <button class="filter-chip" type="button" data-filter="web">
+          Web & Interactive
+        </button>
+
+        <button class="filter-chip" type="button" data-filter="graphic">
+          Graphic Design
+        </button>
+
+        <button class="filter-chip" type="button" data-filter="photo">
+          Photography
+        </button>
+
+        <button class="filter-chip" type="button" data-filter="spatial">
+          Visual & Spatial
+        </button>
       </div>
 
-      <!-- Featured Project -->
+      <!-- Featured Projects -->
       <section class="featured-work-section" aria-labelledby="featured-work-title">
-        <h2 id="featured-work-title" class="section-title">Featured Project</h2>
 
+        <h2 id="featured-work-title" class="section-title">
+          Featured Projects
+        </h2>
+
+        <!-- LUMO Entertainment -->
         <article class="featured-project-card project-card" data-category="web">
+
+          <div class="project-image-wrap featured-image-wrap lumo-featured-wrap">
+            <img 
+              src="lumo.png" 
+              alt="LUMO Entertainment website homepage with the LUMO logo over a dark textured background" 
+              class="project-image lumo-featured-image"
+            >
+          </div>
+
+          <div class="featured-project-info">
+
+            <p class="project-meta">
+              Web & Visual Designer / 2026–Present
+            </p>
+
+            <h3>LUMO Entertainment</h3>
+
+            <p>
+              Designing and maintaining LUMO Entertainment’s responsive website, with a focus on visual storytelling, information hierarchy, typography, motion, and cross-device experience.
+            </p>
+
+            <ul class="project-tags" aria-label="Project tags">
+              <li>Web Design</li>
+              <li>Responsive Design</li>
+              <li>Visual Design</li>
+              <li>Content Structure</li>
+            </ul>
+
+            <a 
+              href="https://www.lumoculture.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              View Project ↗
+            </a>
+
+          </div>
+        </article>
+
+        <!-- Dandelicat -->
+        <article class="featured-project-card project-card" data-category="web">
+
           <div class="project-image-wrap featured-image-wrap">
             <img 
               src="dandelicat.png" 
@@ -66,7 +128,10 @@
           </div>
 
           <div class="featured-project-info">
-            <p class="project-meta">Thesis Project / 2026</p>
+
+            <p class="project-meta">
+              Thesis Project / 2026
+            </p>
 
             <h3>Dandelicat</h3>
 
@@ -89,18 +154,24 @@
             >
               View Project ↗
             </a>
+
           </div>
         </article>
+
       </section>
 
       <!-- Selected Projects -->
       <section class="selected-works-section" aria-labelledby="selected-works-title">
-        <h2 id="selected-works-title" class="section-title">Selected Projects</h2>
+
+        <h2 id="selected-works-title" class="section-title">
+          Selected Projects
+        </h2>
 
         <div class="project-grid">
 
           <!-- Amplify Verbal Exchanges Rekindle Yourself -->
           <article class="project-card small-project-card" data-category="web">
+
             <div class="project-image-wrap">
               <img 
                 src="AVERY-Cover.PNG" 
@@ -110,9 +181,14 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Web Project / 2024</p>
 
-              <h3 class="long-project-title">Amplify Verbal Exchanges Rekindle Yourself</h3>
+              <p class="project-meta">
+                Web Project / 2024
+              </p>
+
+              <h3 class="long-project-title">
+                Amplify Verbal Exchanges Rekindle Yourself
+              </h3>
 
               <p>
                 An early web experiment using the acronym AVERY to explore language systems, interaction, and self-identification.
@@ -125,14 +201,19 @@
                 <li>Interaction</li>
               </ul>
 
-              <a href="vwamplify-verbal-exchanges.html" class="project-link">
+              <a 
+                href="vwamplify-verbal-exchanges.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
           <!-- Dandelicat Poster -->
           <article class="project-card small-project-card poster-project-card" data-category="graphic">
+
             <div class="project-image-wrap poster-thumb-wrap">
               <img 
                 src="DandelicatPoster.jpg" 
@@ -142,7 +223,10 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Graphic Design / 2025</p>
+
+              <p class="project-meta">
+                Graphic Design / 2025
+              </p>
 
               <h3>Dandelicat Poster</h3>
 
@@ -157,14 +241,19 @@
                 <li>Thesis</li>
               </ul>
 
-              <a href="vwdandelicat-poster.html" class="project-link">
+              <a 
+                href="vwdandelicat-poster.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
           <!-- Chromatic Surface Studies -->
           <article class="project-card small-project-card" data-category="photo">
+
             <div class="project-image-wrap">
               <img 
                 src="chromatic-cover.jpg" 
@@ -174,7 +263,10 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Photography / Color Study / 2024</p>
+
+              <p class="project-meta">
+                Photography / Color Study / 2024
+              </p>
 
               <h3>Chromatic Surface Studies</h3>
 
@@ -189,14 +281,19 @@
                 <li>Surface</li>
               </ul>
 
-              <a href="vwchromatic-surface.html" class="project-link">
+              <a 
+                href="vwchromatic-surface.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
           <!-- Avery as System -->
           <article class="project-card small-project-card" data-category="web">
+
             <div class="project-image-wrap">
               <img 
                 src="fall24p1.png" 
@@ -206,7 +303,10 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Interactive Website / 2024</p>
+
+              <p class="project-meta">
+                Interactive Website / 2024
+              </p>
 
               <h3>Avery as System</h3>
 
@@ -220,14 +320,19 @@
                 <li>System</li>
               </ul>
 
-              <a href="vwavery-as-system.html" class="project-link">
+              <a 
+                href="vwavery-as-system.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
           <!-- The Virus -->
           <article class="project-card small-project-card" data-category="spatial">
+
             <div class="project-image-wrap">
               <img 
                 src="vcover.jpeg" 
@@ -237,7 +342,10 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Light Sculpture / Selected Work</p>
+
+              <p class="project-meta">
+                Light Sculpture / Selected Work
+              </p>
 
               <h3>The Virus</h3>
 
@@ -252,14 +360,19 @@
                 <li>Spatial</li>
               </ul>
 
-              <a href="vwthe-virus.html" class="project-link">
+              <a 
+                href="vwthe-virus.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
           <!-- Shadow and Structure Studies -->
           <article class="project-card small-project-card" data-category="photo">
+
             <div class="project-image-wrap">
               <img 
                 src="shadow-cover.jpg" 
@@ -269,7 +382,10 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Photography / Light Study / 2024</p>
+
+              <p class="project-meta">
+                Photography / Light Study / 2024
+              </p>
 
               <h3>Shadow and Structure Studies</h3>
 
@@ -284,14 +400,19 @@
                 <li>Urban</li>
               </ul>
 
-              <a href="vwshadow-structure.html" class="project-link">
+              <a 
+                href="vwshadow-structure.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
           <!-- Fingers -->
           <article class="project-card small-project-card" data-category="spatial">
+
             <div class="project-image-wrap fingers-thumb-wrap">
               <img 
                 src="fingers.jpeg" 
@@ -301,7 +422,10 @@
             </div>
 
             <div class="project-card-content">
-              <p class="project-meta">Wearable Sculpture / Fashion Design</p>
+
+              <p class="project-meta">
+                Wearable Sculpture / Fashion Design
+              </p>
 
               <h3>Fingers</h3>
 
@@ -316,9 +440,13 @@
                 <li>Body</li>
               </ul>
 
-              <a href="vwfingers.html" class="project-link">
+              <a 
+                href="vwfingers.html" 
+                class="project-link"
+              >
                 View Project
               </a>
+
             </div>
           </article>
 
@@ -328,9 +456,17 @@
     </section>
 
     <footer class="page-footer-nav">
-      <a href="about.html" class="footer-link previous-link">← Previous</a>
-      <a href="index.html" class="footer-home">Home</a>
-      <a href="explorations.html" class="footer-link next-link">Next →</a>
+      <a href="about.html" class="footer-link previous-link">
+        ← Previous
+      </a>
+
+      <a href="index.html" class="footer-home">
+        Home
+      </a>
+
+      <a href="explorations.html" class="footer-link next-link">
+        Next →
+      </a>
     </footer>
 
   </main>
