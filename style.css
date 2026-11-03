@@ -747,6 +747,498 @@ Used by: About / Contact / Resume / Project Detail Text
   font-weight: 700;
 }
 
+
+/* =========================================================
+About Page: Redesigned Layout
+Used by: about.html
+========================================================= */
+
+/* Page width */
+.about-page .page-hero {
+  margin-bottom: 60px;
+}
+
+.about-page .about-intro,
+.about-page .about-division,
+.about-page .about-beyond,
+.about-page .about-next {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Shared Typography */
+.about-page .about-intro h2,
+.about-page .about-division h2,
+.about-page .about-beyond h2,
+.about-page .about-next h2 {
+  font-family: var(--font-pixel);
+  color: var(--pink);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.about-page .about-intro p,
+.about-page .about-copy p,
+.about-page .about-beyond p,
+.about-page .about-next p {
+  font-family: var(--font-body);
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: var(--ink-82);
+  margin: 0 0 18px;
+}
+
+.about-page strong {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+/* =========================================================
+Introduction: Text + Portrait
+========================================================= */
+
+
+.about-page .about-intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+  grid-template-areas:
+    "title portrait"
+    "copy portrait";
+
+  column-gap: 34px;
+  row-gap: 0;
+
+  align-items: start;
+
+  padding: 50px 0 70px;
+  border-top: var(--border-soft);
+}
+
+
+.about-page .about-intro-copy {
+  grid-area: copy;
+  min-width: 0;
+}
+
+.about-page .about-intro h2 {
+  grid-area: title;
+
+  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  margin: 0 0 24px;
+}
+
+
+.about-page .about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+Portrait Photo
+========================================================= */
+
+.about-page .about-portrait {
+  grid-area: portrait;
+
+  width: 100%;
+  max-width: 440px;
+
+  margin: 0;
+
+  justify-self: end;
+  align-self: center;
+}
+
+.about-page .about-portrait-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* Portrait image */
+.about-page .about-portrait-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Decorative pink tape */
+.about-page .about-photo-frame::before {
+  content: "";
+  position: absolute;
+
+  width: 90px;
+  height: 27px;
+
+  top: -15px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-7deg);
+
+  background: rgba(244, 146, 192, 0.45);
+  z-index: 2;
+}
+
+/* Little sparkle */
+.about-page .about-photo-frame::after {
+  content: "✧";
+  position: absolute;
+
+  top: -30px;
+  right: -18px;
+
+  color: var(--pink);
+  font-size: 2.2rem;
+}
+
+/* =========================================================
+My Art + My Design
+========================================================= */
+
+.about-page .about-division {
+  display: grid;
+  grid-template-columns: minmax(0, 290px) minmax(0, 1fr);
+  gap: 65px;
+
+  padding: 60px 0 68px;
+  border-top: var(--border-soft);
+}
+
+.about-page .about-label,
+.about-page .about-copy {
+  min-width: 0;
+}
+
+.about-page .about-section-number {
+  margin: 0 0 18px;
+
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  color: var(--pink-62);
+}
+
+.about-page .about-division h2 {
+  margin: 0 0 16px;
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+}
+
+
+.about-page .about-label h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.4;
+
+  font-weight: 400;
+  font-style: italic;
+
+  color: var(--ink);
+}
+
+
+.about-page .about-subtitle {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+
+  color: var(--ink-78);
+}
+
+.about-page .about-tiny-star {
+  display: block;
+  margin-top: 22px;
+
+  color: var(--pink-48);
+  font-size: 2rem;
+}
+
+.about-page .about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+Beyond the Screen
+========================================================= */
+
+.about-page .about-beyond {
+  padding: 60px 0 72px;
+  border-top: var(--border-soft);
+}
+
+
+.about-page .about-beyond-heading {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.about-page .about-beyond-heading .about-subtitle {
+  display: block;
+  margin-top: 10px;
+}
+
+
+.about-page .about-beyond h2 {
+  margin: 0;
+  font-size: clamp(2.6rem, 4.5vw, 3.5rem);
+}
+
+.about-page .about-beyond-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-page .about-beyond-copy {
+  min-width: 0;
+}
+
+.about-page .about-beyond-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Decorative note */
+.about-page .about-postit {
+  padding: 32px 22px;
+
+  border: var(--border-soft);
+  background: rgba(255, 240, 247, 0.65);
+
+  box-shadow:
+    9px 9px 0 rgba(236, 61, 151, 0.06);
+
+  transform: rotate(3deg);
+  text-align: center;
+}
+
+.about-page .about-heart {
+  color: var(--pink);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.about-page .about-postit p {
+  margin: 14px 0 0;
+
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.6;
+
+  color: var(--pink-82);
+}
+
+/* =========================================================
+What's Next?
+========================================================= */
+
+
+.about-page .about-next {
+  display: block;
+
+  padding: 38px 44px;
+
+  border: var(--border-soft);
+  background: rgba(255, 240, 247, 0.4);
+}
+
+.about-page .about-next-cta {
+  margin-top: 26px;
+}
+
+
+.about-page .about-next h2 {
+  margin: 0 0 22px;
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+}
+
+.about-page .about-next-copy {
+  min-width: 0;
+}
+
+.about-page .about-next-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Reach Me button */
+.about-page .about-reach {
+  display: inline-block;
+
+  padding: 12px 22px;
+
+  background: var(--pink-78);
+  color: var(--cream);
+  text-decoration: none;
+
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-page .about-reach:hover {
+  background: var(--pink);
+  transform: translateY(-3px);
+}
+
+.about-page .about-reach:focus-visible {
+  outline: 3px dashed var(--pink);
+  outline-offset: 4px;
+}
+
+.about-page .about-cta-note {
+  margin: 12px 0 0;
+
+  text-align: left;
+  font-size: 0.78rem;
+  color: var(--pink-70);
+}
+
+.about-page .page-footer-nav {
+  max-width: 1080px;
+}
+
+/* =========================================================
+About Page: Tablet
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-page .about-intro {
+    gap: 30px;
+  }
+
+  .about-page .about-division {
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .about-page .about-beyond-grid {
+    gap: 30px;
+  }
+
+  .about-page .about-next {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-page .about-next-cta {
+    justify-self: start;
+  }
+}
+
+/* =========================================================
+About Page: Mobile
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-page .page-hero {
+    margin-bottom: 45px;
+  }
+
+
+  .about-page .about-intro {
+    grid-template-columns: minmax(0, 1fr);
+  
+    grid-template-areas:
+      "title"
+      "portrait"
+      "copy";
+  
+    gap: 0;
+  
+    padding: 40px 0 55px;
+  }
+  
+
+  .about-page .about-intro h2 {
+    font-size: clamp(2.1rem, 9vw, 2.8rem);
+    margin-bottom: 22px;
+  }
+  
+  .about-page .about-portrait {
+    width: 100%;
+    max-width: 380px;
+  
+    justify-self: center;
+    margin: 0 auto 28px;
+  }
+  
+
+  .about-page .about-division {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 45px 0 52px;
+  }
+
+  .about-page .about-division h2 {
+    font-size: 2.8rem;
+  }
+
+  .about-page .about-tiny-star {
+    display: none;
+  }
+
+  .about-page .about-beyond {
+    padding: 45px 0 55px;
+  }
+
+  .about-page .about-beyond-heading {
+    display: block;
+  }
+
+  .about-page .about-beyond-heading
+  .about-subtitle {
+    margin-top: 12px;
+  }
+
+  .about-page .about-beyond-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .about-postit {
+    display: none;
+  }
+
+  .about-page .about-next {
+    padding: 28px 22px;
+  }
+
+  .about-page .about-next h2 {
+    font-size: 2.8rem;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  .about-page .about-reach {
+    transition: none;
+  }
+}
+
+
 /* =========================================================
 Buttons
 Used by: Resume / Reach Me / Project Detail external links
@@ -882,7 +1374,7 @@ Used by: contact.html
 }
 
 .contact-card p:last-of-type {
-  margin-bottom: 24px;
+  margin-bottom: 0px;
 }
 
 .contact-block {
@@ -894,15 +1386,69 @@ Used by: contact.html
   margin-top: 34px;
 }
 
-/* reach me */
-.contact-form-note {
-  margin-top: 18px !important;
-  margin-bottom: 0 !important;
+/* =========================================================
+Reach Me: Contact Links
+========================================================= */
 
-  font-size: 0.95rem !important;
-  line-height: 1.6 !important;
-  color: rgba(36, 33, 36, 0.62) !important;
+/* Contact details spacing */
+.contact-page .contact-details {
+  margin-top: 24px;
 }
+
+.contact-page .contact-details p {
+  margin: 0 0 12px;
+  line-height: 1.75;
+}
+
+.contact-page .contact-details p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact labels */
+.contact-page .contact-line strong {
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 5px;
+}
+
+/* Email: pink text without underline */
+.contact-page .contact-email {
+  color: var(--pink);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+
+  transition: opacity 0.2s ease;
+}
+
+.contact-page .contact-email:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* LinkedIn: pink text with underline */
+.contact-page .contact-linkedin {
+  color: var(--pink);
+  font-weight: 700;
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+
+  transition: color 0.2s ease;
+}
+
+.contact-page .contact-linkedin:hover {
+  color: var(--pink-78);
+}
+
+/* Keyboard accessibility */
+.contact-page .contact-email:focus-visible,
+.contact-page .contact-linkedin:focus-visible {
+  outline: 2px dashed var(--pink);
+  outline-offset: 4px;
+}
+
 
 /* =========================================================
 Explorations Page
