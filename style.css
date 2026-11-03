@@ -1426,10 +1426,11 @@ Reach Me: Contact Links
 }
 
 
+
 .contact-page .contact-email:hover {
   opacity: 0.7;
-  text-decoration: none;
 }
+
 
 /* LinkedIn: pink text with underline */
 .contact-page .contact-linkedin {
