@@ -1411,15 +1411,20 @@ Reach Me: Contact Links
   margin-right: 5px;
 }
 
-/* Email: pink text without underline */
+
+/* Email: clickable link with underline */
 .contact-page .contact-email {
   color: var(--pink);
   font-weight: 700;
-  text-decoration: none;
-  overflow-wrap: anywhere;
 
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+
+  overflow-wrap: anywhere;
   transition: opacity 0.2s ease;
 }
+
 
 .contact-page .contact-email:hover {
   opacity: 0.7;
